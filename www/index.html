@@ -4,6 +4,13 @@
 var hoodie = new Hoodie("{{hoodie_api_url}}");
 console.log("hello hoodie");
 console.log(hoodie);
+hoodie.request("GET", "/")
+  .done(function(data) {
+    console.log(data);
+  })
+  .fail(function(error) {
+    console.log(error);
+  });
 
 </script>
 <h1>Hoodie <code>{{hoodie_appname}}</code></h1>
