@@ -1,7 +1,4 @@
 {
   "name": "app",
-  "type": "hoodie-app",
-  "dependencies": {
-    "httpd-server": "~0.5.1"
-  }
+  "type": "{{hoodie_appname}}",
 }
