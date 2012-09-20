@@ -1,4 +1,4 @@
 {
-  "name": "app",
-  "type": "{{hoodie_appname}}"
+  "name": "{{hoodie_appname}}",
+  "type": "app"
 }
