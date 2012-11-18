@@ -1,7 +1,8 @@
 {
   "name": "{{hoodie_appname}}",
+  "version": "1.0.0",
   "type": "app",
   "dependencies": {
-    "hoodie-app": "https://github.com/hoodiehq/hoodie-app.git"
+    "hoodie-app": "git://github.com/hoodiehq/hoodie-app.git"
   }
 }
