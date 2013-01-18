@@ -4,5 +4,8 @@
   "type": "app",
   "dependencies": {
     "hoodie-app": "git://github.com/hoodiehq/hoodie-app.git"
+  },
+  "scripts": {
+    "start": "node node_modules/hoodie-app/lib/hoodie-app.js"
   }
 }
