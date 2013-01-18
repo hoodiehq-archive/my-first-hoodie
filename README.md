@@ -1,5 +1,6 @@
 # Creating a new Hoodie App
 
+    $ npm install -g local-tld
     $ git clone https://github.com/hoodiehq/hoodie-app-skeleton.git myapp
     $ cd myapp
     $ npm install
