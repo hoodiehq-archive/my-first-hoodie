@@ -13,7 +13,7 @@ and your app's admin backend at `http://admin.myapp.dev`
 
 ## Deplying to Nodejitsu
 
-(**NOTE**: this is not wokring yet)
+(NOTE: this is not wokring yet)
 
 This assumes you have a nodejitsu account set up.
 
