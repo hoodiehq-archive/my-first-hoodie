@@ -8,8 +8,8 @@ Now: move on.
 
     $ npm install -g local-tld
     $ git clone git@github.com:hoodiehq/my-first-hoodie.git myapp
-    $ Replace {{hoodie_appname}} with your appname in ./package.json
     $ cd myapp
+    $ Replace {{hoodie_appname}} with your appname in ./package.json
     $ npm install
     $ npm start
 
