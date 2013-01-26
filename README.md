@@ -26,8 +26,8 @@ and your app's admin backend at `http://admin.myapp.dev`
 Troubleshooting
 -----------------
 
-You need to have CouchDB run locally. Open localhost:5984 to confirm. We an own sandboxed instance
-where all configuration and databases are stored, but the CouchDB prozess needs to be running.
+You need to have CouchDB run locally. Open http://localhost:5984 to confirm. 
+Every hoodie app has its own sandboxed CouchDB configuration & databases, but we need the couchdb process to be running.
 
 If things still do not work, try:
 
