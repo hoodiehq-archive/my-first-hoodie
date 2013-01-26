@@ -4,19 +4,16 @@
     $ git clone https://github.com/hoodiehq/hoodie-app-skeleton.git myapp
     $ cd myapp
     $ npm install
-    $ port=8080 \
-      couchdb_url=nodejitsudb12345.iriscouch.com \
-      HOODIE_SERVER=http://nodejitsudb12345.iriscouch.com \
-      HOODIE_ADMIN_USER=admin \
-      HOODIE_ADMIN_PASS=party \
-      node node_modules/hoodie-app/lib/hoodie-app.js  
-      ...
-      Your app is ready now.
+    $ npm start
 
-Now you can go to `http://localhost:8080` to visit your app.
-(TBD: that currently doesn’t actually work, you need to pudeploysh to nodejitsu)
+Now you can go to `http://myapp.dev` to visit your app.
+
+You also can your app's couch at `http://couch.myapp.dev`
+and your app's admin backend at `http://admin.myapp.dev`
 
 ## Deplying to Nodejitsu
+
+(**NOTE**: this is not wokring yet)
 
 This assumes you have a nodejitsu account set up.
 
@@ -32,17 +29,4 @@ Deploy
     ...
     ok.
 
-You can now go to `http://yourapp.jit.so`. Boom
-
-
-## Installing the email confirmation worker
-
-    $ npm install --save https://github.com/hoodiehq/worker-email-signup-confirmation.git
-
-Starting the app now requires a few extra config variables:
-
-    HOODIE_EMAIL_HOST=mail.gmail.com \
-    HOODIE_EMAIL_USER=gmailusername \
-    HOODIE_EMAIL_PASS=gamailpassword
-
-
+You can now go to `http://yourapp.jit.su`. Boom
