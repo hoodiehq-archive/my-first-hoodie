@@ -1,5 +1,8 @@
 # Creating a new Hoodie App
 
+Wait! Replace `myapp` with your desired appname (lowercase, letters only).
+Now: move on.
+
     $ npm install -g local-tld
     $ git clone https://github.com/hoodiehq/hoodie-app-skeleton.git myapp
     $ cd myapp
