@@ -4,7 +4,7 @@ Wait! Replace `myapp` with your desired appname (lowercase, letters only).
 Now: move on.
 
     $ npm install -g local-tld
-    $ git clone https://github.com/hoodiehq/hoodie-app-skeleton.git myapp
+    $ git clone git@github.com:hoodiehq/my-first-hoodie.git myapp
     $ cd myapp
     $ npm install
     $ npm start
