@@ -9,7 +9,7 @@ before installing, make sure $NODE_PATH is set (path might eventually differ for
 then install with:
 
     $ npm install -g local-tld
-    $ brew install https://raw.github.com/janl/homebrew/1696ae6e52d4dc3f8d4c9967f037750e52de0d6d/Library/Formula/hoodie.rb
+    $ brew install https://raw.github.com/janl/homebrew/1696ae6e52d4dc3f8d4c9967f037750e52de0d6d/Library/Formula/hoodie.rb --without-npm
     $ hoodie new myappname
 
 That created a folder "myappname". You are done. Start the app:
