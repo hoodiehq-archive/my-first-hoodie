@@ -4,7 +4,7 @@ Creating a new Hoodie App
 before installing, make sure $NODE_PATH is set (path might eventually differ for you)
 
     $ echo $NODE_PATH 
-    /usr/local/lib/node_modules
+    /usr/local/share/npm/lib/node_modules
 
 then install with:
 
@@ -29,9 +29,21 @@ Troubleshooting
 You need to have CouchDB run locally. Open http://localhost:5984 to confirm. 
 Every hoodie app has its own sandboxed CouchDB configuration & databases, but we need the couchdb process to be running.
 
-If things still do not work, try:
+Make sure that local-tld got installed correctly
 
-    & launchctl unload ~/Library/LaunchAgents/ie.hood.local-tld-service.plist
+    $ open $NODE_PATH/local-tld
+
+Make sure, that paths have been set corretly
+
+    $ echo $NODE_PATH
+    $ cat ~/Library/LaunchAgents/ie.hood.local-tld-service.plist
+
+You should see `<string>/usr/local/lib/node_modules/local-tld/bin/local-tld-service</string>`,
+`/usr/local/lib/node_modules` being what `$ echo $NODE_PATH` returns.
+
+If things do not work, try:
+
+    $ launchctl unload ~/Library/LaunchAgents/ie.hood.local-tld-service.plist
     $ launchctl load -Fw ~/Library/LaunchAgents/ie.hood.local-tld-service.plist"
 
 If things STILL don't work, try that (but don't tell Jan)
