@@ -49,3 +49,18 @@ If things do not work, try:
 If things STILL don't work, try that (but don't tell Jan)
 
     $ sudo $NODE_PATH/local-tld/bin/local-tld-troubleshoot
+
+
+## No-Mac
+
+`local-tld` is mac-only for now. If you are on another system, you can fake things until `local-tld` gains multi-platform support.
+
+For your app `myapp` add this to your `/etc/hosts` file:
+
+````
+127.0.0.1 myapp.dev api.myapp.dev couch.myapp.dev
+
+```
+
+Note: there is still some stuff missing for `npm start` on non-mac.
+
