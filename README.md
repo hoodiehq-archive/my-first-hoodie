@@ -23,8 +23,7 @@ Once your app is running, you can access your app's couch at `http://couch.myapp
 and your app's admin backend at `http://admin.myapp.dev`
 
 
-Troubleshooting
------------------
+## Troubleshooting
 
 You need to have CouchDB run locally. Open http://localhost:5984 to confirm. 
 Every hoodie app has its own sandboxed CouchDB configuration & databases, but we need the couchdb process to be running.
@@ -64,3 +63,44 @@ For your app `myapp` add this to your `/etc/hosts` file:
 
 Note: there is still some stuff missing for `npm start` on non-mac.
 
+
+## Deploy to Nodejitsu
+
+You need a Nodejitsu account and the `jitsu` tool installed.
+
+Create a new hoodie app:
+
+    $ hoodie new myapp
+
+Start app locally:
+
+    $ cd myapp
+    $ npm start
+
+Create a database:
+
+    $ jitsu database create couch myapp
+
+This prints out the URL for your database, something like:
+
+    http://nodejitsudb123456789.iriscouch.com:5984
+
+Remember that.
+
+Create the Nodejitsu app.
+
+    $ jitsu apps create create
+
+Set your database URL as an environment variable:
+
+    $ jitsu env set COUCH_URL http://nodejitsudb123456789.iriscouch.com:5984
+
+Deploy!
+
+    $ jitsu deploy
+
+(wait a minute)
+
+Go to: `http://myapp.jit.su`
+
+Boom.
