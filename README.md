@@ -1,12 +1,6 @@
-Creating a new Hoodie App
-============================
+# Creating a new Hoodie App
 
-before installing, make sure $NODE_PATH is set (path might eventually differ for you)
-
-    $ echo $NODE_PATH 
-    /usr/local/share/npm/lib/node_modules
-
-then install with:
+Install with:
 
     $ npm install -g local-tld
     $ brew install https://raw.github.com/janl/homebrew/1696ae6e52d4dc3f8d4c9967f037750e52de0d6d/Library/Formula/hoodie.rb --without-npm
@@ -104,3 +98,21 @@ Deploy!
 Go to: `http://myapp.jit.su`
 
 Boom.
+
+
+## Deploy dreamcode tl;dr
+
+    $ hoodie new myapp
+    $ cd myapp
+    $ npm start
+
+    $ hoodie remote add nodejitsu
+     - jitsu login
+     - jitsu database create couch myapp
+         - setup couchdb admin
+     - jitsu apps create
+     - jitsu env set COUCH_URL http://...
+     - jitsu env set COUCH_PASS <secret>
+
+    $ hoodie deploy
+     - jitsu deploy
