@@ -24,6 +24,7 @@ Every hoodie app has its own sandboxed CouchDB configuration & databases, but we
 
 Make sure that local-tld got installed correctly
 
+    $ NODE_PATH=`npm root -g`
     $ open $NODE_PATH/local-tld
 
 Make sure, that paths have been set corretly
