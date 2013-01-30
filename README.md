@@ -103,7 +103,7 @@ In the bottom right, click on "Fix This". Create a new user with the username `a
 
 Create the Nodejitsu app.
 
-    $ jitsu apps create create
+    $ jitsu apps create
 
 Set your database URL as an environment variable:
 
