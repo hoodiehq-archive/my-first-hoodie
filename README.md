@@ -27,7 +27,7 @@ Create your first Hoodie app:
 That created a folder "myappname". You are done. Start the app:
 
     $ cd myappname
-    $ npm start
+    $ hoodie start
 
 Now follow instructions, your browser should automatically open http://myappname.dev
 
