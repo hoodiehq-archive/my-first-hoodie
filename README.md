@@ -95,7 +95,11 @@ This prints out the URL for your database, something like:
 
     http://nodejitsudb123456789.iriscouch.com:5984
 
-Remember that.
+Go to:
+
+    http://nodejitsudb123456789.iriscouch.com:5984/_utils
+
+In the bottom right, click on "Fix This". Create a new user with the username `admin` and a password of your choice. Remember the password.
 
 Create the Nodejitsu app.
 
@@ -104,6 +108,9 @@ Create the Nodejitsu app.
 Set your database URL as an environment variable:
 
     $ jitsu env set COUCH_URL http://nodejitsudb1234567890.iriscouch.com:5984
+    $ jitsu env set HOODIE_ADMIN_PASS <yourpassword>
+
+`<yourpassword>` is the one you set up two steps ago.
 
 Deploy!
 
