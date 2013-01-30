@@ -44,14 +44,14 @@ Make sure, that paths have been set corretly
     $ cat ~/Library/LaunchAgents/ie.hood.local-tld-service.plist
 
 You should see `<string>/usr/local/lib/node_modules/local-tld/bin/local-tld-service</string>`,
-`/usr/local/lib/node_modules` being what `$ echo $NODE_PATH` returns.
+`/usr/local/lib/node_modules` being what `$ npm root -g` returns.
 
 If things do not work, try:
 
     $ launchctl unload ~/Library/LaunchAgents/ie.hood.local-tld-service.plist
-    $ launchctl load -Fw ~/Library/LaunchAgents/ie.hood.local-tld-service.plist"
+    $ launchctl load -Fw ~/Library/LaunchAgents/ie.hood.local-tld-service.plist
 
-If things STILL don't work, try that (but don't tell Jan)
+If things STILL don't work, try that (but don't tell Jan) ((I saw this! — Jan))
 
     $ sudo $NODE_PATH/local-tld/bin/local-tld-troubleshoot
 
@@ -99,7 +99,7 @@ Create the Nodejitsu app.
 
 Set your database URL as an environment variable:
 
-    $ jitsu env set COUCH_URL http://nodejitsudb123456789.iriscouch.com:5984
+    $ jitsu env set COUCH_URL http://nodejitsudb1234567890.iriscouch.com:5984
 
 Deploy!
 
