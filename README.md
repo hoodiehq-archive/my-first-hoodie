@@ -4,6 +4,10 @@ Prerequisits:
 
 Node.JS
 
+Either hit the big green “Install” button on http://nodejs.org
+
+Or, if you are using Homebrew:
+
     $ brew install node
 
 CouchDB
