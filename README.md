@@ -1,9 +1,23 @@
 # Creating a new Hoodie App
 
+Prerequisits:
+
+Node.JS
+
+    $ brew install node
+
+CouchDB
+
+    $ brew install couchdb
+
+
 Install with:
 
     $ npm install -g local-tld
-    $ brew install https://raw.github.com/janl/homebrew/1696ae6e52d4dc3f8d4c9967f037750e52de0d6d/Library/Formula/hoodie.rb --without-npm
+    $ brew install https://raw.github.com/janl/homebrew/77400bc8fc5e8a19de88536cf20f31c32f4b74c2/Library/Formula/hoodie.rb
+
+Create your first Hoodie app:
+
     $ hoodie new myappname
 
 That created a folder "myappname". You are done. Start the app:
