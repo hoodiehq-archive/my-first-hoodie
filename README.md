@@ -35,6 +35,30 @@ Once your app is running, you can access your app's couch at `http://couch.myapp
 and your app's admin backend at `http://admin.myapp.dev`
 
 
+## Modules
+
+To install a specific module, run (in your app’s directory):
+
+    $ hoodie install module <name>
+
+where `<name>` is one of the Hoofie Modules.
+
+### List of Hoodie Modules
+
+ * users (installed by default)
+  - user sign up
+  - user sign in
+  - passwort forget
+  - change username
+  - change password
+
+ * shares
+  - make private objects public
+  - share private objects with other users or groups
+
+  ...
+
+
 ## Troubleshooting
 
 Make sure that local-tld got installed correctly
