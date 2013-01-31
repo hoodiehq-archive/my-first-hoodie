@@ -2,17 +2,17 @@
 
 Prerequisits:
 
-Node.JS
+* Node.JS
+  
+  Either hit the big green “Install” button on http://nodejs.org
 
-Either hit the big green “Install” button on http://nodejs.org
+  Or, if you are using Homebrew:
 
-Or, if you are using Homebrew:
+  `$ brew install node`
 
-    $ brew install node
-
-CouchDB
-
-    $ brew install couchdb
+* CouchDB
+  
+  `$ brew install couchdb`
 
 
 Install with:
