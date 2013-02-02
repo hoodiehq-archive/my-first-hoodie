@@ -184,16 +184,16 @@ Hoodie.extend('hoodstrap', (function() {
     },
 
     _getElementFor: function(object) {
-      return $('[data-hoodie-store-key="'+object.$type+'/'+object.id+'"]')
+      return $('[data-hoodie-store-key="'+object.type+'/'+object.id+'"]')
     },
 
     _shareToHtml: function(share) {
       var type        = '$share'
         , id          = share.id
         , rev         = share._rev || '-'
-        , createdAt   = share.$createdAt
-        , updatedAt   = share.$updatedAt
-        , syncedAt    = share._$syncedAt
+        , createdAt   = share.createdAt
+        , updatedAt   = share.updatedAt
+        , syncedAt    = share._syncedAt
         , access      = share.access || '-' 
         , password    =share.password || '-'
            
@@ -292,7 +292,7 @@ Hoodie.extend('hoodstrap', (function() {
 
     // 
     _getElementFor: function(object) {
-      return $('[data-hoodie-store-key="'+object.$type+'/'+object.id+'"]')
+      return $('[data-hoodie-store-key="'+object.type+'/'+object.id+'"]')
     },
 
     // 
@@ -300,20 +300,20 @@ Hoodie.extend('hoodstrap', (function() {
       var properties, type, id, rev, createdAt, updatedAt, data;
 
       properties  = $.extend({}, object)
-      type        = properties.$type
+      type        = properties.type
       id          = properties.id
       rev         = properties._rev || '-'
-      createdAt   = properties.$createdAt
-      updatedAt   = properties.$updatedAt
-      syncedAt    = properties._$syncedAt
+      createdAt   = properties.createdAt
+      updatedAt   = properties.updatedAt
+      syncedAt    = properties._syncedAt
 
-      delete properties.$type
+      delete properties.type
       delete properties.id
       delete properties._rev
-      delete properties.$createdAt
-      delete properties.$updatedAt
-      delete properties._$syncedAt
-      // delete properties.$createdBy
+      delete properties.createdAt
+      delete properties.updatedAt
+      delete properties._syncedAt
+      // delete properties.createdBy
 
       createdAt = createdAt ? createdAt.toISOString().substring(0,19).replace('T', ' ') : '-'
       updatedAt = updatedAt ? updatedAt.toISOString().substring(0,19).replace('T', ' ') : '-'
@@ -387,7 +387,7 @@ Hoodie.extend('hoodstrap', (function() {
             data = hoodie.hoodstrap.humanizeDataForEdit(object)
 
             modal.find('.data').attr('rows', data.split(/\n/).length + 3).val(data)
-            modal.find('.type').val(object.$type)
+            modal.find('.type').val(object.type)
             modal.find('.id').val(object.id)
             modal.modal('show')
           });
