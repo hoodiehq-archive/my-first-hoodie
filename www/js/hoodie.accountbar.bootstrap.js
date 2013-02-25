@@ -31,7 +31,7 @@ Hoodie.extend('hoodstrap', (function() {
           return data
         case 'object':
           if (Array.isArray(data)) {
-            return data.map(this.humanizeData).join(',')
+            return data.map(this.humanizeData.bind(this)).join(',')
           } else {
             var rows = []
             for (var key in data) {
