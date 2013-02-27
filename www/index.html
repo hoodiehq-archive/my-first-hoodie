@@ -55,9 +55,15 @@
             <div class="hoodie-account-error">
               Hello,
               <span class="hoodie-username"><!-- usern name will be filled in here --></span>.
-              <a data-hoodie-action="signin" class="btn btn-small btn-danger">
-                Authentication error: Sign in again
-              </a>
+              <span class="btn-group">
+                <button class="btn btn-small btn-danger" data-hoodie-action="signout">Authentication error: Sign in again</button>
+                <button class="btn btn-small dropdown-toggle btn-danger" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a href="#" data-hoodie-action="signout">Sign out</a></li>
+                </ul>
+              </span>
             </div><!-- /.hoodie-account-error -->
           </div><!--/hoodieAccountBar -->
         </div>
