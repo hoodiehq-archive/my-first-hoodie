@@ -92,7 +92,7 @@ Hoodie.extend('hoodstrap', (function() {
           window.hoodie.account.signOut()
           break
         case 'destroy':
-          if( window.confirm("you sure? Destroy account with all its data?") ) {
+          if( window.confirm("you sure?") ) {
             window.hoodie.account.destroy()  
           }
           break
