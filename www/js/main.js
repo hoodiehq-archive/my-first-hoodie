@@ -27,6 +27,7 @@ $( function() {
   editor.getSession().on('change', function() {
     var code = editor.getValue()
     hoodie.store.update('example', 'default', {code: code})
+    hoodie.unbind()
     $preview.html( code )
   })
 })

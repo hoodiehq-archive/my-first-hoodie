@@ -109,7 +109,6 @@
                 $('#todolist').append('<li>'+todo.title+'</li>')
               }
 
-              hoodie.unbind()
               hoodie.store.on('add:todo', addTodo)
 
               hoodie.store.findAll('todo').then( function(todos) {
