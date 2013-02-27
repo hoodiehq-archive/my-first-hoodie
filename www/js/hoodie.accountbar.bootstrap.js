@@ -14,9 +14,11 @@ Hoodie.extend('hoodstrap', (function() {
 
     // 
     hoodifyAccountBar: function() {
-      this.$hoodieAccountBar = $('.hoodie-accountbar')
       this.hoodie.account.authenticate().then(this.handleUserAuthenticated.bind(this), this.handleUserUnauthenticated.bind(this));
+      this.subscribeToHoodieEvents()
+    },
 
+    subscribeToHoodieEvents : function() {
       this.hoodie.account.on('signin', this.handleUserAuthenticated.bind(this))
       this.hoodie.account.on('signout', this.handleUserUnauthenticated.bind(this))
       this.hoodie.on('account:error:unauthenticated remote:error:unauthenticated', this.handleUserAuthenticationError.bind(this))
@@ -25,7 +27,7 @@ Hoodie.extend('hoodstrap', (function() {
     // 
     handleUserAuthenticated: function(username) {
       $('html').attr('data-hoodie-account-status', 'signedin')
-      this.$hoodieAccountBar.find('.hoodie-username').text(username)
+      $('.hoodie-accountbar').find('.hoodie-username').text(username)
     },
 
     // 
@@ -33,7 +35,7 @@ Hoodie.extend('hoodstrap', (function() {
       $('html').attr('data-hoodie-account-status', 'signedout')
     },
     handleUserAuthenticationError: function() {
-      this.$hoodieAccountBar.find('.hoodie-username').text(this.hoodie.account.username)
+      $('.hoodie-accountbar').find('.hoodie-username').text(this.hoodie.account.username)
       $('html').attr('data-hoodie-account-status', 'error')
     }
   }

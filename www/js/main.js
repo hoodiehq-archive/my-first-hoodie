@@ -19,13 +19,15 @@ $( function() {
     localStorage.setItem('code', code)
     editor.setValue( code )
   }
-
-  editor.getSession().on('change', function() {
+  
+  var updatePreview = function() {
     var code = editor.getValue()
     localStorage.setItem('code', code)
-    hoodie.unbind()
     $preview.html( code )
-  })
+  };
+
+  editor.getSession().on('change', updatePreview)
+  hoodie.account.on('signout signin', updatePreview)
 
   $('.code-tab').on('shown', function() {
     editor.focus()

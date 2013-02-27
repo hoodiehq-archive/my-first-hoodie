@@ -97,11 +97,17 @@
                 }
               })
 
-              addTodo = function( todo ) {
+              var addTodo = function( todo ) {
                 $('#todolist').append('<li>'+todo.title+'</li>')
               }
+              var clearTodos = function () {
+                $('#todolist').html()
+              }
 
+              console.log( 'wtf', Math.random() )
+              hoodie.unbind('store:add:todo')
               hoodie.store.on('add:todo', addTodo)
+              hoodie.store.on('clear', clearTodos)
 
               hoodie.store.findAll('todo').then( function(todos) {
                 todos
