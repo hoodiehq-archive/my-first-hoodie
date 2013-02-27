@@ -2,6 +2,18 @@
    Hoodie Sign In / Sign Up / Sign out stylings
    ========================================================================== */
 
+body {
+  background: url('../img/pattern_130.gif');
+}
+
+.container {
+  position: relative;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: -10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
 
 /* hide contents until we know if user is signed in or not */
 body .hoodie-account-signedin,
@@ -17,15 +29,20 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
 }
 
 .hoodie-accountbar {
-  padding: 7px 0 3px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }
 
 .playground .nav-tabs {
   margin: 0;
 }
+.playground .nav-tabs li:first-child {
+  margin-left: 10px;
+}
 
 #preview {
-  padding: 10px 0 0;
+  padding: 10px;
 }
 #code {
   position: relative;
@@ -38,4 +55,15 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+
+.copy {
+  padding: 10px;
+  margin: 30px 0 0;
+  background: #EEE;
+  border-radius: 5px;
+}
+.copy p {
+  margin: 0;
 }
