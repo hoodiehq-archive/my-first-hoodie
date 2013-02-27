@@ -21,22 +21,33 @@
           <div class="hoodie-accountbar pull-right">
 
             <div class="hoodie-account-signedout">
-              <a href="#hoodieAccountModal" data-toggle="modal" class="btn btn-small btn-inverse">
+              <!-- <a href="#hoodieAccountModal" data-toggle="modal" class="btn btn-small btn-inverse">
                 Sign In / Sign Up
-              </a>
+              </a> -->
+              <span class="btn-group">
+                <button class="btn btn-small btn-inverse" data-hoodie-action="signup">Sign Up</button>
+                <button class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a href="#" data-hoodie-action="signin">Sign In</a></li>
+                  <li><a href="#" data-hoodie-action="resetpassword">Reset Password</a></li>
+                </ul>
+              </span>
             </div><!-- /.hoodie-account-signedout -->
 
             <div class="hoodie-account-signedin">
               Hello,
               <span class="hoodie-username"><!-- usern name will be filled in here --></span>
               <span class="btn-group">
-                <button class="hoodie-signout btn btn-small btn-inverse">Sign Out</button>
+                <button class="btn btn-small btn-inverse" data-hoodie-action="signout">Sign Out</button>
                 <button class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown">
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu pull-right">
-                  <li><a href="#hoodieAccountModal" data-toggle="modal">Change Username / Password</a></li>
-                  <li><a href="#" data-hoodie-action="account-destroy">Destroy Account</a></li>
+                  <li><a href="#" data-hoodie-action="changepassword">Change Password</a></li>
+                  <li><a href="#" data-hoodie-action="changeusername">Change Username</a></li>
+                  <li><a href="#" data-hoodie-action="destroy">Destroy Account</a></li>
                 </ul>
               </span>
             </div><!-- /.hoodie-account-signedin -->
@@ -68,116 +79,11 @@
       </footer>
     </div> <!-- /.container -->
 
-    <div id="hoodieAccountModal" class="modal hide fade">
-      <div class="hoodie-account-signedout">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#hoodieAccountModalSignIn" data-toggle="tab">Sign In</a></li>
-            <li><a href="#hoodieAccountModalSignUp" data-toggle="tab">Sign Up</a></li>
-            <li><a href="#hoodieAccountModalRestPassword" data-toggle="tab">Forgot Password</a></li>
-          </ul>
-
-          <ul class="nav nav-tabs hoodie-account-signedin">
-            <li class="active"><a href="#hoodieAccountModalChangePassword" data-toggle="tab">Change password</a></li>
-            <li><a href="#hoodieAccountModalChangeUsername" data-toggle="tab">Change username</a></li>
-          </ul>
-        </div>
-
-        <div class="tab-content">
-          <div class="tab-pane active" id="hoodieAccountModalSignIn">
-            <form data-hoodie-action="account-signin">
-              <div class="modal-body">
-                <input class="username span3" type="text" placeholder="Email"><br />
-                <input class="password span3" type="password" placeholder="Password">
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Sign in</button>
-              </div>
-            </form>
-          </div>
-
-          <div class="tab-pane" id="hoodieAccountModalSignUp">
-            <form class="hoodie-signup" data-hoodie-action="account-signup">
-              <div class="modal-body">
-                <input class="username span3" type="text" placeholder="Email"><br />
-                <input class="password span3" type="password" placeholder="Password"><br />
-                <input class="password_confirmation span3" type="password" placeholder="Password">
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Sign up</button>
-              </div>
-            </form>
-          </div>
-          <div class="tab-pane" id="hoodieAccountModalRestPassword">
-            <form class="hoodie-resetpassword" data-hoodie-action="account-resetpassword">
-              <div class="modal-body">
-                <input class="email span3" type="text" placeholder="Email"><br />
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Reset password</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="hoodie-account-signedin">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
-          <ul class="nav nav-tabs">
-            <li class="active"><a href="#hoodieAccountModalChangePassword" data-toggle="tab">Change password</a></li>
-            <li><a href="#hoodieAccountModalChangeUsername" data-toggle="tab">Change username</a></li>
-          </ul>
-        </div>
-
-        <div class="tab-content">
-          <div class="tab-pane active" id="hoodieAccountModalChangePassword">
-            <form data-hoodie-action="account-changepassword">
-              <div class="modal-body">
-                <input class="password span3" type="password" placeholder="New password">
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Change password</button>
-              </div>
-            </form>
-          </div>
-
-          <div class="tab-pane" id="hoodieAccountModalChangeUsername">
-            <form data-hoodie-action="account-changeusername">
-              <div class="modal-body">
-                <input type="password"  class="password span3"placeholder="current password">
-                <input type="text" class="username span3" placeholder="New username">
-              </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Change username</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="hoodie-account-error">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          Oooops
-        </div>
-
-        <div class="modal-body">
-          dumm di dumm
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">reauthenticate</button>
-        </div>
-      </div>
-    </div><!-- /hoodieAccountModal -->
-
     <script src="js/vendor/jquery-1.8.1.js"></script>
     <script src="js/vendor/bootstrap.js"></script>
     <script src="js/vendor/hoodie.js"></script>
     <script src="js/hoodie.accountbar.bootstrap.js"></script>
+    <script src="js/bootstrap.modalform.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

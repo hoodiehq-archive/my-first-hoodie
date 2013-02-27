@@ -54,69 +54,91 @@ Hoodie.extend('hoodstrap', (function() {
     // bind to click events
     $('body').on('click.hoodie.data-api', '[data-hoodie-action]', function(event) {
       var $element = $(event.target),
-          action   = $element.data('hoodie-action');
+          action   = $element.data('hoodie-action'),
+          $form;
       
       switch(action) {
-        case 'account-signout':
+        case 'signup':
+          $form = $.modalForm({
+            fields: [ 'username', 'password', 'password_confirmation' ],
+            submit: 'Sign Up'
+          })
+          break
+        case 'signin':
+          $form = $.modalForm({
+            fields: [ 'username', 'password' ],
+            submit: 'Sign in'
+          })
+          break
+        case 'resetpassword':
+          $form = $.modalForm({
+            fields: [ 'username' ],
+            submit: 'Reset Password'
+          })
+          break
+        case 'changepassword':
+          $form = $.modalForm({
+            fields: [ 'current_password', 'new_password' ],
+            submit: 'Reset Password'
+          })
+          break
+        case 'changeusername':
+          $form = $.modalForm({
+            fields: [ 'current_password', 'new_username' ],
+            submit: 'Reset Password'
+          })
+          break
+        case 'signout':
           window.hoodie.account.signOut()
           break
-        case 'account-destroy':
+        case 'destroy':
           if( window.confirm("you sure? Destroy account with all its data?") ) {
             window.hoodie.account.destroy()  
           }
           break
       }
-    })
 
-    // bind to form submits
-    $('body').on('submit.hoodie.data-api', '[data-hoodie-action]', function(event) {
-      event.preventDefault();
-
-      var $form    = $(event.target),
-          action   = $form.data('hoodie-action'),
-          username = $form.find('input.username').val(),
-          password = $form.find('input.password').val(),
-          email    = $form.find('input.email').val(),
-          magic;
-
-      switch(action) {
-        case 'account-signin':
-          magic = window.hoodie.account.signIn(username, password)
-          break
-        case 'account-signup':
-          magic = window.hoodie.account.signUp(username, password)
-          break
-        case 'account-changepassword':
-          magic = window.hoodie.account.changePassword(null, password)
-          break
-        case 'account-changeusername':
-          magic = window.hoodie.account.changeUsername(password, username)
-          break
-        case 'account-resetpassword':
-          magic = window.hoodie.account.resetPassword(email)
-          .done(function() {
-            window.alert("send new password to " + email);
-          })
-          break
+      if ($form) {
+        $form.on('submit', handleSubmit( action ))
       }
-
-      magic.done(function() { 
-        $form.find('.alert').remove()
-        $(event.currentTarget).closest('.modal').modal('hide')
-      })
-      magic.fail(function(error) { 
-        $form.find('.alert').remove()
-        $form.prepend('<div class="alert alert-error"><strong>'+error.error+':</strong> '+error.reason+'</div>')
-      })
     })
 
-    var $modal = $('.modal')
-    .on('shown', function() {
-      $modal.find('input:visible').eq(0).focus()
-    })
-    .on('hide', function() {
-      $modal.find('.alert').remove()
-      $modal.find('input, textarea').val('')
-    })
+    var handleSubmit = function(action) {
+      return function(event, inputs) {
+
+        var $modal = $(event.target)
+        var magic;
+
+        switch(action) {
+          case 'signin':
+            magic = window.hoodie.account.signIn(inputs.username, inputs.password)
+            break
+          case 'signup':
+            magic = window.hoodie.account.signUp(inputs.username, inputs.password)
+            break
+          case 'changepassword':
+            magic = window.hoodie.account.changePassword(null, inputs.new_password)
+            break
+          case 'changeusername':
+            magic = window.hoodie.account.changeUsername(inputs.current_password, inputs.new_username)
+            break
+          case 'resetpassword':
+            magic = window.hoodie.account.resetPassword(inputs.email)
+            .done(function() {
+              window.alert("send new password to " + inputs.email);
+            })
+            break
+        }
+
+        magic.done(function() { 
+          $modal.find('.alert').remove()
+          $modal.modal('hide')
+        })
+        magic.fail(function(error) { 
+          $modal.find('.alert').remove()
+          $modal.trigger('error', error)
+        })
+      }
+    }
   })
 }( window.jQuery )

@@ -16,8 +16,7 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
   display: block;
 }
 
-.hoodie-accountbar .hoodie-account-signedin,
-.hoodie-accountbar .hoodie-account-signedout {
+.hoodie-accountbar {
   padding: 7px 0 3px;
 }
 
