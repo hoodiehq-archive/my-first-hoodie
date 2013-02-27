@@ -20,6 +20,13 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
   padding: 7px 0 3px;
 }
 
+.playground .nav-tabs {
+  margin: 0;
+}
+
+#preview {
+  padding: 10px 0 0;
+}
 #code {
   position: relative;
   height: 600px;
