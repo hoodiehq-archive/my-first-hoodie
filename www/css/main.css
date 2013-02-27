@@ -21,10 +21,14 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
 }
 
 #code {
-  padding: 8px;
+  position: relative;
+  height: 600px;
 }
-#code textarea {
-  margin: 0 -8px;
-  width: 100%;
-  min-height: 500px;
+
+#editor { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
