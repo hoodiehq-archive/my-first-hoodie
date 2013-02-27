@@ -1,14 +1,7 @@
-body {
-  padding-bottom: 800px;
-}
-
 /* ==========================================================================
    Hoodie Sign In / Sign Up / Sign out stylings
    ========================================================================== */
 
-.hoodie-accountbar {
-  
-}
 
 /* hide contents until we know if user is signed in or not */
 body .hoodie-account-signedin,
@@ -25,37 +18,9 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
 
 .hoodie-accountbar .hoodie-account-signedin,
 .hoodie-accountbar .hoodie-account-signedout {
-  padding: 10px 0;
+  padding: 7px 0 3px;
 }
 
 .modal form {
   margin: 0;
-}
-
-
-/* ==========================================================================
-   Hoodie Log
-   ========================================================================== */
-
-table th,
-table td {
-  white-space: nowrap;
-}
-table .data {
-  width: 100%;
-  white-space: pre;
-}
-table .data table {
-  width: 100%;
-  margin: -4px -5px;
-}
-table .data table th {
-  min-width: 150px;
-}
-table .data table td {
-  width: 100%;
-}
-table .data table th,
-table .data table td {
-  border-top: 0;
 }

@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <script src="js/vendor/modernizr-2.6.1.min.js"></script>
@@ -16,35 +15,32 @@
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+        <div class="container">
           <a class="brand" href="#">{{hoodie_appname}}</a>
 
-          <div id="hoodieAccountBar" class="hoodie-accountbar pull-right">
+          <div class="hoodie-accountbar pull-right">
+
             <div class="hoodie-account-signedout">
               <a href="#hoodieAccountModal" data-toggle="modal" class="btn btn-small btn-inverse">
                 Sign In / Sign Up
               </a>
             </div><!-- /.hoodie-account-signedout -->
+
             <div class="hoodie-account-signedin">
               Hello,
               <span class="hoodie-username"><!-- usern name will be filled in here --></span>
               <span class="btn-group">
-                <button class="hoodie-signout btn btn-small btn-inverse" data-hoodie-action="account-signout">Sign Out</button>
+                <button class="hoodie-signout btn btn-small btn-inverse">Sign Out</button>
                 <button class="btn btn-small dropdown-toggle btn-inverse" data-toggle="dropdown">
                   <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu">
-                  <li><a href="#hoodieAccountModal" data-toggle="modal" data-hoodie-action="account-changepassword">Change Password</a></li>
-                  <li><a href="#hoodieAccountModal" data-toggle="modal" data-hoodie-action="account-changeusername">Change Username</a></li>
+                <ul class="dropdown-menu pull-right">
+                  <li><a href="#hoodieAccountModal" data-toggle="modal">Change Username / Password</a></li>
                   <li><a href="#" data-hoodie-action="account-destroy">Destroy Account</a></li>
                 </ul>
               </span>
-            </div><!-- /.hoodie-signed-out -->
+            </div><!-- /.hoodie-account-signedin -->
+
             <div class="hoodie-account-error">
               Hello,
               <span class="hoodie-username"><!-- usern name will be filled in here --></span>.
@@ -54,193 +50,25 @@
             </div><!-- /.hoodie-account-error -->
           </div><!--/hoodieAccountBar -->
         </div>
-
       </div>
     </div>
 
-    <div class="container-fluid">
-
-      <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="container">
       <div class="hero-unit">
         <h1>{{hoodie_appname}}</h1>
         <p>
-          hoodified bootstrap modules
+          your slogan here.
         </p>
       </div>
-
-      <hr>
-
-      
-      <div class="hoodie-stores">
-        <h2>
-          Stores
-        </h2>
-
-        <ul class="stores nav nav-tabs">
-          <li>
-            <button class="add-share btn btn-small"><i class="icon-plus"></i> open share</button>
-          </li>
-        </ul>
-
-        <div class="stores tab-content">
-        </div>
-      </div>
-      
-      <hr>
-
-      <div class="hoodie-shares">
-        <h2>
-          Shares <small>(to be done)</small>
-        </h2>
-
-        <table class="table table-condensed">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>rev</th>
-              <th>created at</th>
-              <th>updated at</th>
-              <th>synced at</th>
-              <th>access</th>
-              <th>password</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-        <p>    
-          <button class="btn btn-primary" data-hoodie-action="share-add"><span class="icon-plus icon-white"></span> add</button>    
-          <button class="btn" data-hoodie-action="share-clear"><span class="icon-trash"></span> clear</button>  
-        </p>
-      </div>
-      
-      <hr>
-
-      <!--  
-      <div>
-        <h2>
-          E-Mail <small>(to be done)</small>
-        </h2>
-
-        <ul class="nav nav-tabs">
-          <li class="active">
-            <a href="#hoodieEmailCompose" data-toggle="tab">Compose</a>
-          </li>
-          <li><a href="#hoodieEmailOutbox" data-toggle="tab">Outbox</a></li>
-          <li><a href="#hoodieEmailSent" data-toggle="tab">Sent</a></li>
-        </ul>
-
-        <div class="tab-content">
-          <div class="tab-pane active" id="hoodieEmailCompose">
-            <form class="form-horizontal">
-              <div class="control-group">
-                <label class="control-label" for="inputFrom">From</label>
-                <div class="controls">
-                  <input type="text" id="inputFrom" placeholder="Email" class="span6">
-                </div>
-              </div>
-              <div class="control-group">
-                <label class="control-label" for="inputTo">To</label>
-                <div class="controls">
-                  <input type="text" id="inputTo" placeholder="Email" class="span6">
-                </div>
-              </div>
-              <div class="tabbable tabs-below">
-                <div class="tab-content">
-                  <div class="tab-pane active" id="hoodieEmailLessFields"></div>
-                  <div class="tab-pane" id="hoodieEmailMoreFields">
-                    <div class="control-group">
-                      <label class="control-label" for="inputCc">Cc</label>
-                      <div class="controls">
-                        <input type="text" id="inputCc" placeholder="Email" class="span6">
-                      </div>
-                    </div>
-                    <div class="control-group">
-                      <label class="control-label" for="inputBcc">Bcc</label>
-                      <div class="controls">
-                        <input type="text" id="inputBcc" placeholder="Email" class="span6">
-                      </div>
-                    </div>
-                    <div class="control-group">
-                      <label class="control-label" for="inputHeaders">Headers</label>
-                      <div class="controls">
-                        <textarea id="inputHeaders" class="span6" rows="2"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <ul class="controls nav nav-tabs">
-                  <li class="active"><a href="#hoodieEmailLessFields" data-toggle="tab">less</a></li>
-                  <li><a href="#hoodieEmailMoreFields" data-toggle="tab">more</a></li>
-                </ul>
-              </div>
-
-              <div class="control-group">
-                <label class="control-label tabbable tabs-left" for="EmailBodyText">
-                  <ul class="nav nav-tabs">
-                    <li class="active"><a href="#EmailBodyText" data-toggle="tab">Text</a></li>
-                    <li><a href="#EmailBodyHtml" data-toggle="tab">HTML</a></li>
-                  </ul>
-                </label>
-                <div class="controls tab-content">
-                  <textarea id="EmailBodyText" class="span6 tab-pane active" rows="5">Hey there,
-
-how are you doing?</textarea>
-                  <textarea id="EmailBodyHtml" class="span6 tab-pane" rows="5"><h1>Hey there!</h1>
-
-<p>how are you doing?</p></textarea>
-                </div>
-              </div>
-              <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn">Cancel</button>
-              </div>
-            </form>
-          </div>
-          <div class="tab-pane" id="hoodieEmailOutbox">
-            <h3>Outbox</h3>
-            <p>to be done.</p>
-          </div>
-          <div class="tab-pane" id="hoodieEmailSent">
-            <h3>Sent</h3>
-            <p>to be done.</p>
-          </div>
-        </div>
-      </div>
-      
-      <hr>
-      
-      -->
-      <div class="hoodie-log">
-        <h2>
-          Log
-          <small>(<a href="#" class="clear">clear</a>)</small>
-        </h2>
-        <table class="table table-condensed">
-          <thead>
-            <tr>
-              <th class="">#</th>
-              <th class="">module</th>
-              <th class="">event</th>
-              <th class="data">data</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          </tbody>
-        </table>
-      </div>
-      
-      
 
       <hr>
 
       <footer>
-        <p>&hearts; hood.ie 2012</p>
+        <p>&hearts; hood.ie 2013</p>
       </footer>
-    </div> <!-- /.container-fluid -->
+    </div> <!-- /.container -->
 
-    <div id="hoodieAccountModal" class="login modal hide fade">
+    <div id="hoodieAccountModal" class="modal hide fade">
       <div class="hoodie-account-signedout">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -266,7 +94,6 @@ how are you doing?</textarea>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Sign in</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
               </div>
             </form>
           </div>
@@ -280,7 +107,6 @@ how are you doing?</textarea>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Sign up</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
               </div>
             </form>
           </div>
@@ -291,7 +117,6 @@ how are you doing?</textarea>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Reset password</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
               </div>
             </form>
           </div>
@@ -316,7 +141,6 @@ how are you doing?</textarea>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Change password</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
               </div>
             </form>
           </div>
@@ -329,7 +153,6 @@ how are you doing?</textarea>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Change username</button>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
               </div>
             </form>
           </div>
@@ -339,7 +162,6 @@ how are you doing?</textarea>
       <div class="hoodie-account-error">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
           Oooops
         </div>
 
@@ -348,36 +170,11 @@ how are you doing?</textarea>
         </div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-primary">reauthenticate</button>
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
         </div>
       </div>
     </div><!-- /hoodieAccountModal -->
 
-    <div id="hoodieStoreModal" class="modal hide fade">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-
-        Edit shizzle my dizzle
-      </div>
-
-      <form data-hoodie-action="store-update">
-        <div class="modal-body">
-          <div class="store-add">
-            <input type="text" class="type" placeholder="type" required /><br>
-            <input type="text" class="id" placeholder="id" /> <small>(optional)</small>
-          </div>
-          <textarea class="data span6" placeholder="key: value"></textarea>
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">save</button>
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        </div>
-      </form>
-    </div><!-- /hoodieAccountModal -->
-
-    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script> -->
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.1.js"><\/script>')</script>
-
+    <script src="js/vendor/jquery-1.8.1.js"></script>
     <script src="js/vendor/bootstrap.js"></script>
     <script src="js/vendor/hoodie.js"></script>
     <script src="js/hoodie.accountbar.bootstrap.js"></script>
