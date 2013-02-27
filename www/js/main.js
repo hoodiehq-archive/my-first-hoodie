@@ -26,11 +26,13 @@ $( function() {
     $preview.html( code )
   };
 
-  editor.getSession().on('change', updatePreview)
   hoodie.account.on('signout signin', updatePreview)
 
   $('.code-tab').on('shown', function() {
     editor.focus()
+  })
+  $('.preview-tab').on('shown', function() {
+    updatePreview()
   })
 
   $preview.addClass('active')
