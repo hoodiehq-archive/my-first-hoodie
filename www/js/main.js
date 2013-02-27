@@ -25,4 +25,9 @@ $( function() {
     hoodie.unbind()
     $preview.html( code )
   })
+
+  // autofocus code editor
+  $('.code-tab').on('shown', function() {
+    editor.focus()
+  })
 })
