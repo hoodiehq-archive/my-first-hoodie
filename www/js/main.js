@@ -1,4 +1,4 @@
-hoodie  = new Hoodie(baseUrl)
+hoodie  = new Hoodie()
 
 $hoodieAccountModal = $('#hoodieAccountModal')
 .on('shown', function() {
