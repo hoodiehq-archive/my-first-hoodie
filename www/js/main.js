@@ -15,6 +15,7 @@ $( function() {
     code = $('#preview').html()
     code = code.replace(/(^[^\n+]*\n|\n[^\n+]*$)/g, '');
     code = code.replace(/[ ]{12}/g, '');
+    code = code.replace(/<ul id="todolist">.*<\/ul>/, '<ul id="todolist"></ul>');
     localStorage.setItem('code', code)
     editor.setValue( code )
   }
