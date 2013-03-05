@@ -39,9 +39,9 @@ and your app's admin backend at `http://admin.myapp.dev`
 
 To install a specific module, run (in your app’s directory):
 
-    $ hoodie install module <name>
+    $ hoodie module install <name>
 
-where `<name>` is one of the Hoofie Modules.
+where `<name>` is one of the Hoodie Modules.
 
 ### List of Hoodie Modules
 
