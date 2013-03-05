@@ -32,6 +32,7 @@ That created a folder "myappname". You are done. Start the app:
 Now follow instructions, your browser should automatically open http://myappname.dev
 
 Once your app is running, you can access your app's couch at `http://couch.myapp.dev`
+(Futon, CouchDB's web-based administration at http://couch.myapp.dev/_utils) 
 and your app's admin backend at `http://admin.myapp.dev`
 
 
