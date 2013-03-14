@@ -84,6 +84,17 @@ If things STILL don't work, try that (but don't tell Jan) ((I saw this! — Jan)
 
     $ sudo $NODE_PATH/local-tld/bin/local-tld-troubleshoot
 
+**Vhosts**
+
+If you find Hoodie interfering with your vhosts, here's a temporary workaround:
+
+To get your vhosts back: `$ sudo ipfw flush`
+
+To get local-tld back: `$ npm install -g local-tld`
+
+To find out which state you're in: `$ sudo ipfw list`
+If this includes something like "00100 fwd 127.0.0.1,5999 tcp from any to me dst-port 80 in", local-tld is currently running and might be blocking your vhosts.
+
 
 ## No-Mac
 
