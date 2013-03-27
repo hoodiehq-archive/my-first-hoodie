@@ -29,20 +29,31 @@ That created a folder "myappname". You are done. Start the app:
     $ cd myappname
     $ hoodie start
 
-Now follow instructions, your browser should automatically open http://myappname.dev
+Now follow instructions, your browser should automatically open
+http://myappname.dev
 
-Once your app is running, you can access your app's couch at `http://couch.myapp.dev`
-(Futon, CouchDB's web-based administration at `http://couch.myapp.dev/_utils`) 
-and your app's admin backend at `http://admin.myapp.dev`
+Once your app is running, you can access your app's couch at
+http://couch.myapp.dev (Futon, CouchDB's web-based administration
+at http://couch.myapp.dev/_utils) and your app's admin backend at
+http://admin.myapp.dev
+
+If you want to access your local hoodie installation from
+other computers or mobile devices on the same local network,
+you can use http://myapp.10.0.0.1.xip.io (assuming `10.0.0.1`)
+is your machines local ip address.
 
 
 ## Modules
 
-To install a specific module, run (in your app’s directory):
+To install a specific module, run (in your app's directory):
 
     $ hoodie module install <name>
 
 where `<name>` is one of the Hoodie Modules.
+
+To uninstall use:
+
+    $ hoodie module uninstall <name>
 
 ### List of Hoodie Modules
 
