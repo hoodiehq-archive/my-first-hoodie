@@ -101,7 +101,6 @@
                 $('#todolist').html()
               }
 
-              console.log( 'wtf', Math.random() )
               hoodie.unbind('store:add:todo')
               hoodie.store.on('add:todo', addTodo)
               hoodie.store.on('clear', clearTodos)
