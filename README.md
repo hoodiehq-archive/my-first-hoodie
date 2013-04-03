@@ -18,7 +18,8 @@ Prerequisits:
 Install with:
 
     $ npm install -g local-tld
-    $ brew install https://raw.github.com/janl/homebrew/77400bc8fc5e8a19de88536cf20f31c32f4b74c2/Library/Formula/hoodie.rb
+    $ brew tap hoodiehq/homebrew-hoodie
+    $ brew install hoodie
 
 Create your first Hoodie app:
 
