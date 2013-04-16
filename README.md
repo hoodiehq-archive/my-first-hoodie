@@ -14,6 +14,7 @@ Prerequisits:
   
   `$ brew install couchdb`
 
+(If any of these fail, run `brew update` to make sure your Homebrew version is up to date.)
 
 Install with:
 
