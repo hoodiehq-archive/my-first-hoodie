@@ -6,6 +6,13 @@
     "hoodie-app": "git://github.com/hoodiehq/hoodie-app.git",
     "worker-users": "git://github.com/hoodiehq/worker-users.git"
   },
+  "subdomain": "hoodie-{{hoodie_appname}}",
+  "domains": [
+    "admin.hoodie-{{hoodie_appname}}.jit.su",
+    "couch.hoodie-{{hoodie_appname}}.jit.su",
+    "api.hoodie-{{hoodie_appname}}.jit.su",
+    "admin.api.hoodie-{{hoodie_appname}}.jit.su"
+  ],
   "scripts": {
     "start": "node node_modules/hoodie-app/lib/hoodie-app.js"
   }
