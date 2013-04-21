@@ -127,7 +127,7 @@ Hoodie.extend('hoodstrap', (function() {
           case 'resetpassword':
             magic = window.hoodie.account.resetPassword(inputs.email)
             .done(function() {
-              window.alert("send new password to " + inputs.email);
+              alert("send new password to " + inputs.email);
             })
             break
         }
