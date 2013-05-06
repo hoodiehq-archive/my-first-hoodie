@@ -1,11 +1,11 @@
-# Creating a new Hoodie App
+# Creating a New Hoodie App
 
-Prerequisits:
+## Install on Mac
+
+Prerequisites:
 
 * Node.JS
-  
   Either hit the big green “Install” button on http://nodejs.org
-
   Or, if you are using Homebrew:
 
   `$ brew install node`
@@ -43,6 +43,29 @@ If you want to access your local hoodie installation from
 other computers or mobile devices on the same local network,
 you can use http://myapp.10.0.0.1.xip.io (assuming `10.0.0.1`)
 is your machines local ip address.
+
+## Install on Ubuntu/Linux
+
+* Install Node.JS:
+  Either hit the big green “Install” button on http://nodejs.org or via package manager [here](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
+
+* Install CouchDB: Follow the directions for your OS http://wiki.apache.org/couchdb/Installation
+
+* Now clone this repo to a directory where you want to make a Hoodie app:
+
+    `$ git clone https://github.com/hoodiehq/hoodie-cmd dirname`
+    
+* Run the 'hoodie' file:
+
+    `$ bash hoodie new myappname`
+
+That created a folder "myappname". Start the app:
+
+    $ cd myappname
+    $ npm start
+
+You will be asked for a password for CouchDB. After which you can access your site at http://127.0.0.1:8080
+and the admin backend at http://127.0.0.1:8090 with the password you just created.
 
 
 ## Modules
@@ -107,18 +130,6 @@ To get local-tld back: `$ npm install -g local-tld`
 
 To find out which state you're in: `$ sudo ipfw list`
 If this includes something like "00100 fwd 127.0.0.1,5999 tcp from any to me dst-port 80 in", local-tld is currently running and might be blocking your vhosts.
-
-
-## No-Mac
-
-`local-tld` is mac-only for now. If you are on another system, you can fake things until `local-tld` gains multi-platform support.
-
-For your app `myapp` add this to your `/etc/hosts` file:
-
-````
-127.0.0.1 myapp.dev api.myapp.dev couch.myapp.dev
-
-```
 
 Note: there is still some stuff missing for `npm start` on non-mac.
 
