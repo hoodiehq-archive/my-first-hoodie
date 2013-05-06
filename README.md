@@ -131,9 +131,6 @@ To get local-tld back: `$ npm install -g local-tld`
 To find out which state you're in: `$ sudo ipfw list`
 If this includes something like "00100 fwd 127.0.0.1,5999 tcp from any to me dst-port 80 in", local-tld is currently running and might be blocking your vhosts.
 
-Note: there is still some stuff missing for `npm start` on non-mac.
-
-
 ## Deploy to Nodejitsu
 
 You need a Nodejitsu account and the `jitsu` tool installed.
