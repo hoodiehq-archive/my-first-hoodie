@@ -3,7 +3,7 @@
 Prerequisits:
 
 * Node.JS
-  
+
   Either hit the big green “Install” button on http://nodejs.org
 
   Or, if you are using Homebrew:
@@ -11,7 +11,7 @@ Prerequisits:
   `$ brew install node`
 
 * CouchDB
-  
+
   `$ brew install couchdb`
 
 (If any of these fail, run `brew update` to make sure your Homebrew version is up to date.)
@@ -21,6 +21,8 @@ Install with:
     $ npm install -g local-tld
     $ brew tap hoodiehq/homebrew-hoodie
     $ brew install hoodie
+
+**Note:** Do not run `$ npm install -g local-tld` as `sudo`. This will cause the installation to fail.
 
 Create your first Hoodie app:
 
