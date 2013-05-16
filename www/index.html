@@ -86,12 +86,16 @@
             <input type="text" id="todoinput"  placeholder="new todo ↵" />
 
             <script>
-              $('#todoinput').on('keypress', function(event) {
-                if (event.keyCode == 13) { // ENTER
-                  hoodie.store.add('todo', {title: event.target.value})
-                  event.target.value = ''
-                }
-              })
+              // for some reason this needs to be inside a document ready
+              // to bind properly on Firefox
+              $(function () {
+                $('#todoinput').on('keypress', function(event) {
+                  if (event.keyCode == 13) { // ENTER
+                    hoodie.store.add('todo', {title: event.target.value})
+                    event.target.value = ''
+                  }
+                })
+              });
 
               var addTodo = function( todo ) {
                 $('#todolist').append('<li>'+todo.title+'</li>')
