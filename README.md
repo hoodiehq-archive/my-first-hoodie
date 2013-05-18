@@ -82,13 +82,24 @@ Make sure that local-tld got installed correctly
     $ NODE_PATH=`npm root -g`
     $ open $NODE_PATH/local-tld
 
-Make sure, that paths have been set corretly
+Make sure that paths have been set correctly
 
     $ echo $NODE_PATH
     $ cat ~/Library/LaunchAgents/ie.hood.local-tld-service.plist
 
-You should see `<string>/usr/local/lib/node_modules/local-tld/bin/local-tld-service</string>`,
-`/usr/local/lib/node_modules` being what `$ npm root -g` returns.
+In some situations, you may need to manually update `~/Library/LaunchAgents/ie.hood.local-tld-service.plist` to correctly source your Node installation, particularly if you are using a Node version manager, such as `nvm`.
+
+Check the output of `$ cat ~/Library/LaunchAgents/ie.hood.local-tld-service.plist` for the following:
+
+```
+<key>ProgramArguments</key>
+<array>
+    <string>should equal the output of `$ which node`</string>
+    <string>should equal the output of `$ echo $NODE_PATH` + /local-tld/bin/local-tld-service</string>
+</array>
+```
+
+If these values aren't correct, you'll need to open `~/Library/LaunchAgents/ie.hood.local-tld-service.plist` in a text editor and update the file with the aforementioned values.
 
 If things do not work, try:
 
