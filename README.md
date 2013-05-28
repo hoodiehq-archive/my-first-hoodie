@@ -170,7 +170,9 @@ Create the Nodejitsu app.
 Set your database URL as an environment variable:
 
     $ jitsu env set COUCH_URL http://nodejitsudb1234567890.iriscouch.com:5984
+    $ jitsu env set HOODIE_ADMIN_USER admin
     $ jitsu env set HOODIE_ADMIN_PASS <yourpassword>
+    
 
 `<yourpassword>` is the one you set up two steps ago.
 
