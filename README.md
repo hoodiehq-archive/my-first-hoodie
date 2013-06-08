@@ -10,7 +10,7 @@ Prerequisits:
 
   `$ brew install node`
 
-* CouchDB
+* CouchDB ( >= v1.2.0 )
 
   `$ brew install couchdb`
 
