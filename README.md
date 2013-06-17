@@ -1,51 +1,8 @@
 # Creating a new Hoodie App
 
-Prerequisits:
+## Installation
 
-* Node.JS
-
-  Either hit the big green “Install” button on http://nodejs.org
-
-  Or, if you are using Homebrew:
-
-  `$ brew install node`
-
-* CouchDB ( >= v1.2.0 )
-
-  `$ brew install couchdb`
-
-(If any of these fail, run `brew update` to make sure your Homebrew version is up to date.)
-
-Install with:
-
-    $ npm install -g local-tld
-    $ brew tap hoodiehq/homebrew-hoodie
-    $ brew install hoodie
-
-**Note:** Do not run `$ npm install -g local-tld` as `sudo`. This will cause the installation to fail.
-
-Create your first Hoodie app:
-
-    $ hoodie new myappname
-
-That created a folder "myappname". You are done. Start the app:
-
-    $ cd myappname
-    $ hoodie start
-
-Now follow instructions, your browser should automatically open
-http://myappname.dev
-
-Once your app is running, you can access your app's couch at
-http://couch.myapp.dev (Futon, CouchDB's web-based administration
-at http://couch.myapp.dev/_utils) and your app's admin backend at
-http://admin.myapp.dev
-
-If you want to access your local hoodie installation from
-other computers or mobile devices on the same local network,
-you can use http://myapp.10.0.0.1.xip.io (assuming `10.0.0.1`)
-is your machines local ip address.
-
+Please refer to the [install guides for OS X, Linux and Windows](http://hood.ie/#installation).
 
 ## Modules
 
@@ -120,21 +77,6 @@ To get local-tld back: `$ npm install -g local-tld`
 
 To find out which state you're in: `$ sudo ipfw list`
 If this includes something like "00100 fwd 127.0.0.1,5999 tcp from any to me dst-port 80 in", local-tld is currently running and might be blocking your vhosts.
-
-
-## No-Mac
-
-`local-tld` is mac-only for now. If you are on another system, you can fake things until `local-tld` gains multi-platform support.
-
-For your app `myapp` add this to your `/etc/hosts` file:
-
-````
-127.0.0.1 myapp.dev api.myapp.dev couch.myapp.dev
-
-```
-
-Note: there is still some stuff missing for `npm start` on non-mac.
-
 
 ## Deploy to Nodejitsu
 
