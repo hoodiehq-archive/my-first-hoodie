@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "app",
   "dependencies": {
-    "hoodie-server": "git://github.com/hoodiehq/hoodie-server.git",
+    "hoodie-app": "git://github.com/hoodiehq/hoodie-server.git",
     "hoodie-worker-users": "git://github.com/hoodiehq/worker-users.git"
   },
   "subdomain": "hoodie-{{hoodie_appname}}",
