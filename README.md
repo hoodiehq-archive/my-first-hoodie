@@ -89,7 +89,7 @@ Create a new hoodie app:
 Start app locally:
 
     $ cd myapp
-    $ npm start
+    $ hoodie start
 
 Create a database:
 
@@ -133,7 +133,7 @@ Boom.
 
     $ hoodie new myapp
     $ cd myapp
-    $ npm start
+    $ hoodie start
 
     $ hoodie remote add nodejitsu
      - jitsu login
