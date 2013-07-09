@@ -7,15 +7,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-
-    <script src="js/vendor/jquery-1.9.1.js"></script>
-    <script src="js/vendor/bootstrap.js"></script>
-    <script src="js/vendor/hoodie.js"></script>
-    <script src="js/hoodie.accountbar.bootstrap.js"></script>
-    <script src="js/bootstrap.modalform.js"></script>
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/prism/prism.css">
+    <link rel="stylesheet" href="assets/main.css">
   </head>
   <body>
     <div class="container">
@@ -73,59 +67,58 @@
         </div><!--/hoodieAccountBar -->
       </div>
 
-      <div class="playground">
-        <ul class="nav nav-tabs">
-          <li class="active"><a  class="preview-tab" href="#preview" data-toggle="tab">Preview</a></li>
-          <li><a class="code-tab" href="#code" data-toggle="tab">Code</a></li>
-        </ul>
+      <div class="content">
+        <ul id="todolist"></ul>
 
-        <div class="tab-content">
-          <div class="tab-pane" id="preview">
-            <ul id="todolist"></ul>
-
-            <input type="text" id="todoinput"  placeholder="new todo ↵" />
-
-            <script>
-              // for some reason this needs to be inside a document ready
-              // to bind properly on Firefox
-              $(function () {
-                $('#todoinput').on('keypress', function(event) {
-                  if (event.keyCode == 13) { // ENTER
-                    hoodie.store.add('todo', {title: event.target.value})
-                    event.target.value = ''
-                  }
-                })
-              });
-
-              var addTodo = function( todo ) {
-                $('#todolist').append('<li>'+todo.title+'</li>')
-              }
-              var clearTodos = function () {
-                $('#todolist').html()
-              }
-
-              hoodie.unbind('store:add:todo')
-              hoodie.store.on('add:todo', addTodo)
-              hoodie.store.on('clear', clearTodos)
-
-              hoodie.store.findAll('todo').then( function(todos) {
-                todos
-                  .sort( function(a, b) { return a.createdAt > b.createdAt })
-                  .forEach( addTodo )
-              })
-            </script>
-          </div>
-          <div class="tab-pane" id="code">
-            <div id="editor"></div>
-          </div>
-        </div>
+        <input type="text" id="todoinput"  placeholder="new todo ↵" />
       </div>
+
+      <div class="code">
+<pre class="language-javascript"><code class="language-javascript">
+var hoodie  = new Hoodie()
+
+// initial load of all todo items from the store
+hoodie.store.findAll('todo').then( function(todos) {
+  todos.sort( sortByCreatedAt ).forEach( addTodo )
+})
+
+// when a new todo gets stored, add it to the UI
+hoodie.store.on('add:todo', addTodo)
+// clear todo list when the get wiped from store
+hoodie.store.on('clear', clearTodos)
+
+// handle creating a new task
+console.log($('#todoinput').length)
+$('#todoinput').on('keypress', function(event) {
+  if (event.keyCode == 13) { // ENTER
+    hoodie.store.add('todo', {title: event.target.value});
+    event.target.value = '';
+  }
+})
+
+function addTodo( todo ) { 
+  $('#todolist').append('&lt;li&gt;'+todo.title+'&lt;/li&gt;');
+}
+function clearTodos() {
+  $('#todolist').html();
+}
+function sortByCreatedAt(a, b) { 
+  return a.createdAt > b.createdAt
+}
+</code></pre>
+      </div><!-- /.code -->
 
       <footer class="copy">
         <p>&hearts; hood.ie 2013</p>
       </footer>
     </div> <!-- /.container -->
 
-    <script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
+    <script src="assets/vendor/jquery-1.9.1.js"></script>
+    <script src="assets/vendor/bootstrap/bootstrap.js"></script>
+    <script src="assets/vendor/prism/prism.js"></script>
+    <script src="assets/vendor/hoodie.js"></script>
+    <script src="assets/vendor/hoodie.accountbar.bootstrap.js"></script>
+    <script src="assets/vendor/bootstrap.modalform.js"></script>
+    <script src="assets/main.js"></script>
   </body>
 </html>
