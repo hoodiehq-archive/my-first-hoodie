@@ -9,7 +9,7 @@ hoodie.store.findAll('todo').then( function(todos) {
 // when a new todo gets stored, add it to the UI
 hoodie.store.on('add:todo', addTodo)
 // clear todo list when the get wiped from store
-hoodie.store.on('clear', clearTodos)
+hoodie.account.on('signout', clearTodos)
 
 // handle creating a new task
 $('#todoinput').on('keypress', function(event) {
@@ -23,7 +23,7 @@ function addTodo( todo ) {
   $('#todolist').append('<li>'+todo.title+'</li>');
 }
 function clearTodos() {
-  $('#todolist').html();
+  $('#todolist').html('');
 }
 function sortByCreatedAt(a, b) { 
   return a.createdAt > b.createdAt
