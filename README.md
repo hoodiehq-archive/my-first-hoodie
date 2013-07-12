@@ -8,13 +8,13 @@ Please refer to the [install guides for OS X, Linux and Windows](http://hood.ie/
 
 To install a specific module, run (in your app's directory):
 
-    $ hoodie module install <name>
+    $ hoodie install <name>
 
 where `<name>` is one of the Hoodie Modules.
 
 To uninstall use:
 
-    $ hoodie module uninstall <name>
+    $ hoodie uninstall <name>
 
 ### List of Hoodie Modules
 
