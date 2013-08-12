@@ -97,13 +97,13 @@ $('#todoinput').on('keypress', function(event) {
 })
 
 function addTodo( todo ) { 
-  $('#todolist').append('<li>'+todo.title+'</li>');
+  $('#todolist').append('&lt;li&gt;'+todo.title+'&lt;/li&gt;');
 }
 function clearTodos() {
   $('#todolist').html('');
 }
 function sortByCreatedAt(a, b) { 
-  return a.createdAt > b.createdAt
+  return a.createdAt &gt; b.createdAt
 }
 </code></pre>
       </div><!-- /.code -->
