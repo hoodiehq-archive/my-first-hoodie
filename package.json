@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "type": "app",
   "dependencies": {
-    "hoodie-app": "git://github.com/hoodiehq/hoodie-app.git",
-    "worker-users": "git://github.com/hoodiehq/worker-users.git"
+    "hoodie-app": "git://github.com/hoodiehq/hoodie-server.git#new_plugin_architecture",
+    "worker-users": "git://github.com/hoodiehq/worker-users.git#new_plugin_architecture"
   },
   "scripts": {
     "start": "node node_modules/hoodie-app/lib/hoodie-app.js"
