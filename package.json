@@ -7,6 +7,6 @@
     "hoodie-plugin-users": "git://github.com/hoodiehq/worker-users.git#new_plugin_architecture"
   },
   "scripts": {
-    "start": "node node_modules/hoodie-app/bin/start"
+    "start": "node node_modules/hoodie-server/bin/start"
   }
 }
