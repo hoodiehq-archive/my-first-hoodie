@@ -4,7 +4,9 @@
   "type": "app",
   "dependencies": {
     "hoodie-server": "git://github.com/hoodiehq/hoodie-server.git#plugins",
-    "hoodie-plugin-users": "git://github.com/hoodiehq/worker-users.git#new_plugin_architecture"
+    "hoodie-plugin-appconfig": "git://github.com/hoodiehq/hoodie-plugin-appconfig.git",
+    "hoodie-plugin-email": "git://github.com/hoodiehq/hoodie-plugin-email.git",
+    "hoodie-plugin-users": "git://github.com/hoodiehq/hoodie-plugin-users.git"
   },
   "scripts": {
     "start": "node node_modules/hoodie-server/bin/start"
