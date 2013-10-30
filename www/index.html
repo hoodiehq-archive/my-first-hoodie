@@ -96,13 +96,13 @@ $('#todoinput').on('keypress', function(event) {
   }
 })
 
-function addTodo( todo ) { 
+function addTodo( todo ) {
   $('#todolist').append('&lt;li&gt;'+todo.title+'&lt;/li&gt;');
 }
 function clearTodos() {
   $('#todolist').html('');
 }
-function sortByCreatedAt(a, b) { 
+function sortByCreatedAt(a, b) {
   return a.createdAt &gt; b.createdAt
 }
 </code></pre>
@@ -116,7 +116,9 @@ function sortByCreatedAt(a, b) {
     <script src="assets/vendor/jquery-1.9.1.js"></script>
     <script src="assets/vendor/bootstrap/bootstrap.js"></script>
     <script src="assets/vendor/prism/prism.js"></script>
-    <script src="assets/vendor/hoodie.js"></script>
+    <!-- Load the dynamic version of hoodie.js that includes all the plugin code-->
+    <script src="/_api/_files/hoodie.js"></script>
+
     <script src="assets/vendor/hoodie.accountbar.bootstrap.js"></script>
     <script src="assets/vendor/bootstrap.modalform.js"></script>
     <script src="assets/main.js"></script>
