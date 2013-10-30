@@ -1,12 +1,12 @@
 {
   "name": "{{hoodie_appname}}",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "app",
   "dependencies": {
-    "hoodie-server": "git://github.com/hoodiehq/hoodie-server.git#plugins",
-    "hoodie-plugin-appconfig": "git://github.com/hoodiehq/hoodie-plugin-appconfig.git",
-    "hoodie-plugin-email": "git://github.com/hoodiehq/hoodie-plugin-email.git",
-    "hoodie-plugin-users": "git://github.com/hoodiehq/hoodie-plugin-users.git"
+    "hoodie-server": "~0.8.12",
+    "hoodie-plugin-appconfig": "~0.1.0",
+    "hoodie-plugin-email": "~0.1.1",
+    "hoodie-plugin-users": "0.0.9"
   },
   "subdomain": "hoodie-{{hoodie_appname}}",
   "domains": [
