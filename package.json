@@ -10,5 +10,12 @@
   },
   "scripts": {
     "start": "node node_modules/hoodie-server/bin/start"
+  },
+  "hoodie": {
+    "plugins": [
+      "hoodie-plugin-appconfig",
+      "hoodie-plugin-email",
+      "hoodie-plugin-users"
+    ]
   }
 }
