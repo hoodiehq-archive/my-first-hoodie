@@ -21,7 +21,7 @@ To uninstall use:
  * users (installed by default)
   - user sign up
   - user sign in
-  - passwort forget
+  - password forget
   - change username
   - change password
 
