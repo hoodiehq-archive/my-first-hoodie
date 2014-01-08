@@ -128,6 +128,9 @@ Go to: `http://myapp.jit.su`
 
 Boom.
 
+## Deploy on a regular Linux/UNIX box:
+
+[See deployment.md](deployment.md)
 
 ## Deploy dreamcode tl;dr
 
