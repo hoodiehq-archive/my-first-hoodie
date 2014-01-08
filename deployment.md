@@ -2,7 +2,7 @@
 
 Note that this is a incomplete draft. It should get you going with production system, but there is no guarantee that there isn’t anything wrong with the setup form a performance or security perspective. Please check with your local sysadmin to make sure and please let us know if we can improve anything :)
 
-This guide is for Linux only at this point. Other Unixes should be covered too, with slight modifications.
+This guide is for Linux only at this point. Other UNIXes should be covered too, with slight modifications.
 
 ## Install Dependencies:
 
