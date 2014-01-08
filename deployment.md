@@ -127,7 +127,7 @@ This has the advantage that in case of an issue with Hoodie, your clients will s
 
 ## logrotate
 
-We’ve set up a bunch of log files, you will want to make sure you don’t run out of space. Let’s set up log rotation in `/etc/logrotate.d/hoodie:
+We’ve set up a bunch of log files, you will want to make sure you don’t run out of space. Let’s set up log rotation in `/etc/logrotate.d/hoodie`:
 
 ```
 /var/log/hoodie.std* {
