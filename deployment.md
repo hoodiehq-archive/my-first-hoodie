@@ -106,7 +106,7 @@ Instead we use some software that is battle tested and gives us a bonus feature 
 
 We will be using nginx as an HTTP proxy. Other HTTP proxy software should be equally suitable, Apache 2, HAProxy are just two that came to mind. We are going with nginx because our hosting provider offers support for it, so we are going with that :)
 
-We add a new file `/etc/nginx/vhosts.d/appname.conf with the contents of https://gist.github.com/janl/2a8e6ebc80a25817dca0
+We add a new file `/etc/nginx/vhosts.d/appname.conf` with the contents of https://gist.github.com/janl/2a8e6ebc80a25817dca0
 
 You will need to adjust the domain name and paths to log files and SSL certificates and keys.
 
