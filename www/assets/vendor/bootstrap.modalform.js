@@ -21,7 +21,7 @@
         html += "      "+title;
         html += "        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>";
         html += "      </h3>";
-        html += "    <\/div>";  
+        html += "    <\/div>";
       }
       html += "    <div class=\"modal-body\">";
       while (field = fields.shift()) {
@@ -58,7 +58,7 @@
 
       $modal.on('error', function(event, error) {
         $modal.find('.alert').remove();
-        $modal.find('.modal-body').before('<div class="alert alert-error"><strong>'+error.error+':</strong> '+error.reason+'</div>');
+        $modal.find('.modal-body').before('<div class="alert alert-error">'+error.message+'</div>');
       });
 
       $modal.on('shown', function() {
