@@ -4,32 +4,29 @@
 
 Please refer to the [install guides for OS X, Linux and Windows](http://hood.ie/#installation).
 
-## Modules
+## Plugins
 
-To install a specific module, run (in your app's directory):
+To install a specific plugin, run (in your app's directory):
 
     $ hoodie install <name>
 
-where `<name>` is one of the Hoodie Modules.
+where `<name>` is one of the Hoodie Plugin.
 
 To uninstall use:
 
     $ hoodie uninstall <name>
 
-### List of Hoodie Modules
+### List of Hoodie Plugins
 
- * users (installed by default)
+* users (installed by default)
   - user sign up
   - user sign in
   - password forget
   - change username
   - change password
 
- * shares
-  - make private objects public
-  - share private objects with other users or groups
-
-  ...
+* email (installed by default)
+  - send multipart emails
 
 
 ## Troubleshooting
@@ -114,7 +111,7 @@ Set your database URL as an environment variable:
     $ jitsu env set COUCH_URL http://nodejitsudb1234567890.iriscouch.com:5984
     $ jitsu env set HOODIE_ADMIN_USER admin
     $ jitsu env set HOODIE_ADMIN_PASS <yourpassword>
-    
+
 
 `<yourpassword>` is the one you set up two steps ago.
 
@@ -129,7 +126,7 @@ Go to: `http://myapp.jit.su`
 Boom.
 
 
-## Deploy dreamcode tl;dr
+<!--## Deploy dreamcode tl;dr
 
     $ hoodie new myapp
     $ cd myapp
@@ -144,4 +141,4 @@ Boom.
      - jitsu env set COUCH_PASS <secret>
 
     $ hoodie deploy
-     - jitsu deploy
+     - jitsu deploy-->
