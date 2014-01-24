@@ -85,7 +85,7 @@ hoodie.store.findAll('todo').then( function(todos) {
 
 // when a new todo gets stored, add it to the UI
 hoodie.store.on('add:todo', addTodo)
-// clear todo list when the get wiped from store
+// when a user signs out, clear the todo list
 hoodie.account.on('signout', clearTodos)
 
 // handle creating a new task
