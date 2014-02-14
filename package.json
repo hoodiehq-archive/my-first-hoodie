@@ -6,7 +6,7 @@
     "hoodie-server": "0.9.13",
     "hoodie-plugin-appconfig": "~0.1.0",
     "hoodie-plugin-email": "~0.1.1",
-    "hoodie-plugin-users": "0.0.9"
+    "hoodie-plugin-users": "0.1.0"
   },
   "subdomain": "hoodie-{{hoodie_appname}}",
   "domains": [
