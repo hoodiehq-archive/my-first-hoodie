@@ -1,6 +1,6 @@
 {
   "name": "{{hoodie_appname}}",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "type": "app",
   "dependencies": {
     "hoodie-server": "0.9.13",
