@@ -31,6 +31,13 @@ To uninstall use:
 
 ## Troubleshooting
 
+In case you get npm permission errors, this is most likely down to the
+fact that you have prior used the 'sudo' command to install node
+modules.
+
+`sudo -H npm yourCommand` should fix this. For slightly more detail,
+please check out: blog.hood.ie/2014/02/why-you-shouldnt-use-sudo-with-npm/
+
 Make sure that local-tld got installed correctly
 
     $ NODE_PATH=`npm root -g`
