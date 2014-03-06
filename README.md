@@ -36,7 +36,7 @@ fact that you have prior used the 'sudo' command to install node
 modules.
 
 `sudo -H npm yourCommand` should fix this. For slightly more detail,
-please check out: [Why you shouldn't use sude with npm](blog.hood.ie/2014/02/why-you-shouldnt-use-sudo-with-npm/)
+please check out: [Why you shouldn't use sudo with npm](http://blog.hood.ie/2014/02/why-you-shouldnt-use-sudo-with-npm/)
 
 Make sure that local-tld got installed correctly
 
