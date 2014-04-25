@@ -3,7 +3,7 @@
   "version": "1.0.16",
   "type": "app",
   "dependencies": {
-    "hoodie-server": "0.9.19",
+    "hoodie-server": "0.9.23",
     "hoodie-plugin-appconfig": "~0.1.0",
     "hoodie-plugin-email": "~0.1.1",
     "hoodie-plugin-users": "0.1.0"
