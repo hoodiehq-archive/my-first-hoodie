@@ -8,6 +8,9 @@
     "hoodie-plugin-email": "~0.1.1",
     "hoodie-plugin-users": "0.1.0"
   },
+  "engines": {
+    "node": ">=0.10.22"
+  },
   "subdomain": "hoodie-{{hoodie_appname}}",
   "domains": [
     "admin.hoodie-{{hoodie_appname}}.jit.su",
