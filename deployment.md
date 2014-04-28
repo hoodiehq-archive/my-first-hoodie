@@ -48,6 +48,7 @@ Create a new system user:
 
 ```
 useradd --system \
+       -m \
        --home /home/hoodie \
        --shell /bin/bash \
        --no-user-group \
