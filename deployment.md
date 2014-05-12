@@ -111,7 +111,7 @@ We add a new file `/etc/nginx/vhosts.d/appname.conf` with the contents of https:
 
 You will need to adjust the domain name and paths to log files and SSL certificates and keys.
 
-**NOTE**: Due to an issue with SSL session termination, we recommend using HAProxy to do the SSL termination in fornt of nginx. Example configuration will be added later.
+**NOTE**: Due to an issue with SSL session termination, we recommend using HAProxy to do the SSL termination in front of nginx. Example configuration will be added later.
 
 Once this is all set up, you can reload the nginx configuration:
 
