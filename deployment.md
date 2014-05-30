@@ -87,7 +87,7 @@ It is meant to be run as `root`. It is also an early version of what should even
 To launch Hoodie now, do this, as `root`:
 
 ```
-HOODIE_ADMIN_PASS=yourcouchdbadminpasswordfromearlier ./hoodie-daemon.sh
+HOODIE_ADMIN_PASS=yourcouchdbadminpasswordfromearlier ./hoodie-daemon.sh start
 ```
 
 That’s it! You can check if the setup was correct by checking the log files:
