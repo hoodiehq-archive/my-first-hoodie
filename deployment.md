@@ -78,7 +78,7 @@ Or via a git checkout and manual setup
 To start, copy over the script from this gist: https://gist.github.com/janl/b097f7a578ec07e4101c
 
 ```
-wget https://gist.github.com/janl/b097f7a578ec07e4101c/raw/60d60bfe48506bbf5fb79b564c132ea8fc626f00/hoodie-daemon.sh
+wget https://gist.githubusercontent.com/janl/b097f7a578ec07e4101c/raw/01ab9816f64660075e6fe9e5a787545097f22da8/hoodie-daemon.sh
 chmod +x hoodie-daemon.sh
 ```
 
