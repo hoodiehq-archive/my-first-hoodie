@@ -11,11 +11,6 @@
   "engines": {
     "node": ">=0.10.22"
   },
-  "subdomain": "hoodie-{{hoodie_appname}}",
-  "domains": [
-    "admin.hoodie-{{hoodie_appname}}.jit.su",
-    "couch.hoodie-{{hoodie_appname}}.jit.su"
-  ],
   "scripts": {
     "start": "node node_modules/hoodie-server/bin/start"
   },
