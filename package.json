@@ -5,7 +5,7 @@
   "dependencies": {
     "hoodie-server": "^0.9.27",
     "hoodie-plugin-appconfig": "^0.1.0",
-    "hoodie-plugin-email": "^0.1.1",
+    "hoodie-plugin-email": "^0.1.4",
     "hoodie-plugin-users": "^0.1.0"
   },
   "engines": {
