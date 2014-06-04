@@ -1,5 +1,5 @@
 {
-  "name": "{{hoodie_appname}}",
+  "name": "my-first-hoodie",
   "version": "1.0.17",
   "type": "app",
   "dependencies": {
