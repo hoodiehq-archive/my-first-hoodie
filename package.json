@@ -8,7 +8,7 @@
     "hoodie-plugin-email": "^0.1.4",
     "hoodie-plugin-users": "^0.1.1"
   },
-  "files": ["www"],
+  "files": ["www/"],
   "engines": {
     "node": ">=0.10.22"
   },
