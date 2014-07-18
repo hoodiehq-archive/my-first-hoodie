@@ -87,8 +87,6 @@ hoodie.store.on('update:todo', todos.update);
 hoodie.store.on('remove:todo', todos.remove);
 // clear todos when user logs out,
 hoodie.account.on('signout', todos.clear);
-// clear todos when user signsup, because post signup there's a full sync/reload
-hoodie.account.on('signup', todos.clear);
 
 
 // handle creating a new task
