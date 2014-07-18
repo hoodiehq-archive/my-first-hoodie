@@ -13,24 +13,26 @@
       var submit = options.submit || 'submit';
       var $modal, field, type, html = "";
 
-      html += "<div class=\"modal hide fade\">";
-      html += "  <form style=\"margin:0\">";
+      html += "<div class=\"modal fade\">";
+      html += "  <form class=\"modal-dialog\">";
+      html += "    <div class=\"modal-content\">";
       if (title) {
-        html += "    <div class=\"modal-header\">";
-        html += "      <h3>";
-        html += "      "+title;
-        html += "        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>";
-        html += "      </h3>";
-        html += "    <\/div>";
+        html += "      <div class=\"modal-header\">";
+        html += "        <h3>";
+        html += "        "+title;
+        html += "          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>";
+        html += "        </h3>";
+        html += "      <\/div>";
       }
-      html += "    <div class=\"modal-body\">";
+      html += "      <div class=\"modal-body\">";
       while (field = fields.shift()) {
         type = /password/.test(field) ? 'password' : 'text';
-        html += "      <input class=\"span3\" type=\""+type+"\" name=\""+field+"\" placeholder=\""+field.replace(/_/g, ' ')+"\"><br \/>";
+        html += "        <input class=\"form-control\" type=\""+type+"\" name=\""+field+"\" placeholder=\""+field.replace(/_/g, ' ')+"\"><br \/>";
       }
-      html += "    <\/div>";
-      html += "    <div class=\"modal-footer\">";
-      html += "      <button type=\"submit\" class=\"btn btn-primary\">"+submit+"<\/button>";
+      html += "      <\/div>";
+      html += "      <div class=\"modal-footer\">";
+      html += "        <button type=\"submit\" class=\"btn btn-primary\">"+submit+"<\/button>";
+      html += "      <\/div>";
       html += "    <\/div>";
       html += "  <\/form>";
       html += "<\/div>";

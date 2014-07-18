@@ -10,6 +10,7 @@ body {
   position: relative;
   background: #fff;
   margin-top: -10px;
+  padding: 0;
   box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
 
@@ -65,7 +66,7 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
   margin: 30px 0 0;
   border-radius: 5px;
 }
-.hero-unit,
+.jumbotron,
 .copy {
   background: #EBE7DA;
   margin: 0;
@@ -76,7 +77,8 @@ html[data-hoodie-account-status=signedout] .hoodie-account-signedout {
 }
 
 ul#todolist {
-  margin: 0 0 10px 0;
+  margin: 0 0 10px;
+  padding: 0;
 }
 
 #todolist li {
