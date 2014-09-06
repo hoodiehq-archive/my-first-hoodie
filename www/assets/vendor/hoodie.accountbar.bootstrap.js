@@ -80,13 +80,13 @@
         case 'changepassword':
           $form = $.modalForm({
             fields: [ 'current_password', 'new_password' ],
-            submit: 'Reset Password'
+            submit: 'Change Password'
           });
           break;
         case 'changeusername':
           $form = $.modalForm({
             fields: [ 'current_password', 'new_username' ],
-            submit: 'Reset Password'
+            submit: 'Change Username'
           });
           break;
         case 'signout':
