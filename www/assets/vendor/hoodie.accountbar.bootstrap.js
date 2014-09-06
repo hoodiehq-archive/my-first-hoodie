@@ -36,6 +36,9 @@
 
       //
       handleUserUnauthenticated: function() {
+        if (this.hoodie.account.username) {
+          return this.handleUserAuthenticationError();
+        }
         $('html').attr('data-hoodie-account-status', 'signedout');
       },
       handleUserAuthenticationError: function() {
@@ -142,4 +145,4 @@
       };
     };
   });
-}( window.jQuery )
+}( window.jQuery );
