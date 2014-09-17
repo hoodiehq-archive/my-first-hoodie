@@ -70,7 +70,7 @@ As user Hoodie, install your application, either with Hoodie’s application tem
 Or via a git checkout and manual setup
 
 ```
-[sudo -u hoodie] git clone appname repourl
+[sudo -u hoodie] git clone repourl appname
 # make sure package.json has a valid `name` property.
 [sudo -u hoodie] npm install
 ```
