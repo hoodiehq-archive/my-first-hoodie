@@ -61,7 +61,13 @@ This will create a new user and its home directory `/home/hoodie`.
 
 `cd` in to that directory.
 
-As user Hoodie, install your application, either with Hoodie’s application template function:
+Install the Hoodie command line interpreter:
+
+```
+$ npm install -g hoodie-cli
+```
+
+As the *hoodie* user, install your application, either with Hoodie’s application template function:
 
 ```
 [sudo -u hoodie] hoodie new appname githubname/reponame # think https://github.com/githubname/reponame
