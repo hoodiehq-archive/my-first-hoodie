@@ -121,7 +121,7 @@
             magic = window.hoodie.account.signUp(inputs.username, inputs.password);
             break;
           case 'changepassword':
-            magic = window.hoodie.account.changePassword(null, inputs.new_password);
+            magic = window.hoodie.account.changePassword(inputs.current_password, inputs.new_password);
             break;
           case 'changeusername':
             magic = window.hoodie.account.changeUsername(inputs.current_password, inputs.new_username);
