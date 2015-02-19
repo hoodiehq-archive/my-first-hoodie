@@ -82,9 +82,9 @@ hoodie.store.findAll('todo').then(function(allTodos) {
 });
 
 // when a todo changes, update the UI.
-hoodie.store.on('add:todo', todos.add);
-hoodie.store.on('update:todo', todos.update);
-hoodie.store.on('remove:todo', todos.remove);
+hoodie.store.on('todo:add', todos.add);
+hoodie.store.on('todo:update', todos.update);
+hoodie.store.on('todo:remove', todos.remove);
 // clear todos when user logs out,
 hoodie.account.on('signout', todos.clear);
 
