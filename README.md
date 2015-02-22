@@ -1,5 +1,7 @@
 # Creating a new Hoodie App
 
+[![Dependency Status](https://david-dm.org/hoodiehq/my-first-hoodie.svg)](https://david-dm.org/hoodiehq/my-first-hoodie)
+
 ## Installation
 
 Please refer to the [install guides for OS X, Linux and Windows](http://hood.ie/#installation).
