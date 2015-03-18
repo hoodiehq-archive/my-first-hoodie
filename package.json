@@ -6,7 +6,7 @@
     "hoodie-server": "^3.0.0",
     "hoodie-plugin-appconfig": "^2.0.1",
     "hoodie-plugin-email": "^1.0.0",
-    "hoodie-plugin-users": "^2.1.4"
+    "hoodie-plugin-users": "^2.2.1"
   },
   "files": ["www/"],
   "engines": {
