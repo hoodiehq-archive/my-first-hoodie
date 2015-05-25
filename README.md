@@ -12,7 +12,7 @@ To install a specific plugin, run (in your app's directory):
 
     $ hoodie install <name>
 
-where `<name>` is one of the Hoodie Plugin.
+where `<name>` is one of the Hoodie plugins.
 
 To uninstall use:
 
@@ -34,7 +34,7 @@ To uninstall use:
 ## Troubleshooting
 
 In case you get npm permission errors, this is most likely down to the
-fact that you have prior used the 'sudo' command to install node
+fact that you have previously used the 'sudo' command to install node
 modules.
 
 `sudo -H npm yourCommand` should fix this. For slightly more detail,
