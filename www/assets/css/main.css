@@ -6,6 +6,11 @@ body {
   background: url('../img/pattern_130.gif');
 }
 
+b {
+    position: absolute;
+    left: -999em;
+}
+
 .container {
   position: relative;
   background: #fff;
