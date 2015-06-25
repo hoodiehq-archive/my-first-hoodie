@@ -3,12 +3,14 @@
   "version": "3.0.6",
   "type": "app",
   "dependencies": {
-    "hoodie-server": "^3.0.0",
     "hoodie-plugin-appconfig": "^2.0.1",
     "hoodie-plugin-email": "^1.0.0",
-    "hoodie-plugin-users": "^2.2.1"
+    "hoodie-plugin-users": "^2.2.2",
+    "hoodie-server": "^4.0.0"
   },
-  "files": ["www/"],
+  "files": [
+    "www/"
+  ],
   "engines": {
     "node": ">=0.10.22"
   },
