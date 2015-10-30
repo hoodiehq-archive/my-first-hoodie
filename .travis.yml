@@ -1,7 +1,16 @@
 sudo: false
+language: node_js
 cache:
   directories:
   - node_modules
 notifications:
-  slack:
-    secure: N0nLJxU8NGEXgCawN7AMO3XwdA7mrs5zCS1jomT1EUKBMjOLiWfK8xYgRcwg5DJeFbFMLB9jw083Pas59inaj5i8529x6Rtq0G80+6viLgBlGbGzJpW7t6CRArdMu6AOIpRlCWQhiGh729BIdlsKD0gxISHsA2yM8nlV5E+DSaM=
+  email: false
+node_js:
+- 4
+before_script:
+- npm prune
+after_success:
+- npm run semantic-release
+branches:
+  except:
+  - "/^v\\d+\\.\\d+\\.\\d+$/"

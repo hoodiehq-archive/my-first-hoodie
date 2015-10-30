@@ -1,33 +1,41 @@
 {
   "name": "my-first-hoodie",
-  "version": "3.2.1",
-  "bundleDependencies": [
-    "hoodie-plugin-appconfig",
-    "hoodie-plugin-email",
-    "hoodie-plugin-users",
-    "hoodie-server"
-  ],
-  "dependencies": {
-    "hoodie-plugin-appconfig": "^2.0.1",
-    "hoodie-plugin-email": "^1.0.0",
-    "hoodie-plugin-users": "^2.2.2",
-    "hoodie-server": "^4.0.2"
+  "description": "The default/welcome Hoodie app",
+  "author": "The Hoodie Community",
+  "bugs": {
+    "url": "https://github.com/hoodiehq/my-first-hoodie/issues"
+  },
+  "devDependencies": {
+    "semantic-release": "^4.3.5"
   },
   "engines": {
-    "node": ">=0.10.22"
+    "node": ">=4"
   },
-  "files": [
-    "www/"
+  "homepage": "https://github.com/hoodiehq/my-first-hoodie",
+  "keywords": [
+    "frontend-only",
+    "hapi",
+    "hoodie",
+    "nobackend",
+    "offline-first"
   ],
-  "hoodie": {
-    "plugins": [
-      "hoodie-plugin-appconfig",
-      "hoodie-plugin-email",
-      "hoodie-plugin-users"
-    ]
+  "license": "Apache-2.0",
+  "main": "www/index.html",
+  "publishConfig": {
+    "tag": "next"
+  },
+  "release": {
+    "branch": "next",
+    "fallbackTags": {
+      "next": "latest"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hoodiehq/my-first-hoodie.git"
   },
   "scripts": {
-    "start": "node node_modules/hoodie-server/bin/start"
-  },
-  "type": "app"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "echo 'no tests yet'"
+  }
 }
