@@ -1,5 +1,9 @@
 # my-first-hoodie
 
-> The default/welcome Hoodie app
+> Default Hoodie app
 
-Look at [hoodiehq/hoodie](https://github.com/hoodiehq/hoodie) for further instructions.
+[![Dependency Status](https://david-dm.org/hoodiehq/my-first-hoodie.svg)](https://david-dm.org/hoodiehq/my-first-hoodie)
+
+# This is work in progress
+
+see https://github.com/hoodiehq/my-first-hoodie/issues/83
