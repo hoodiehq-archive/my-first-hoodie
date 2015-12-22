@@ -1,0 +1,104 @@
+/* Core overides */
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+body {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h1, h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Layout */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 768px;
+}
+
+.grid {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.grid > .grid-col {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid > .grid-col {
+    float: left;
+    width: calc(50% - 2rem);
+  }
+}
+
+/* Components */
+
+.form-label,
+.form-input,
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  padding: 1rem;
+}
+
+.form-label {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.table {
+  border: 1px solid #aaa;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+}
+
+.table td {
+  border: 1px solid #aaa;
+}
+
+/* Utils */
+
+.hide {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.pull-right {
+  float: right;
+}
+
+@media (max-width: 768px) {
+  .full-width-small {
+    width: 100%;
+  }
+}
