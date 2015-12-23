@@ -9,7 +9,39 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center">Something Tracker</h1>
+      <form id="login-form">
+        <label for="username">Username</label>
+        <input
+          name="username"
+          id="username"
+          width="200"
+          required
+        >
+        <label for="password">Password</label>
+        <input
+          name="password"
+          type="password"
+          id="password"
+          width="200"
+          required
+        >
+        <button
+          name="sign-in"
+          type="submit"
+        >Login</button>
+        <button
+          name="sign-up"
+          type="submit"
+          id="button-register"
+        >Register</button>
+      </form>
+      <p id="loggedin-message" style="display: none">
+        Hello there, <span class="js-username"></span>
+        <button
+          id="button-logout"
+        >Logout</button>
+      </p>
+      <h1>Something Tracker</h1>
       <div class="grid">
         <div class="grid-col">
           <form class="js-tracker-input">

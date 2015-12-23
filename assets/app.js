@@ -1,6 +1,42 @@
+var $loginForm = document.querySelector('#login-form')
+var $loggedinMessage = document.querySelector('#loggedin-message')
+var $registerButton = document.querySelector('#button-register')
+
 var $trackerForm = document.querySelector('.js-tracker-input')
 var $trackerOutput = document.querySelector('.js-tracker-output')
 var $trackerClearButton = document.querySelector('.js-tracker-clear')
+
+$loginForm.addEventListener('submit', function (event) {
+  event.preventDefault()
+
+  var username = $loginForm.querySelector('[name=username]').value
+  var password = $loginForm.querySelector('[name=password]').value
+
+  hoodie.account.signUp({
+    username: username,
+    password: password
+  })
+
+  .catch(function (error) {
+    alert(error)
+  })
+})
+
+$registerButton.addEventListener('click', function (event) {
+  event.preventDefault()
+
+  var username = $loginForm.querySelector('[name=username]').value
+  var password = $loginForm.querySelector('[name=password]').value
+
+  hoodie.account.signUp({
+    username: username,
+    password: password
+  })
+
+  .catch(function (error) {
+    alert(error)
+  })
+})
 
 /**
  * If you submit a form it will emit a submit event.
@@ -32,8 +68,8 @@ $trackerForm.addEventListener('submit', function (event) {
 $trackerClearButton.addEventListener('click', function (event) {
   hoodie.store.clear().then(function () {
     window.location.reload()
-  });
-});
+  })
+})
 
 /**
  * With hoodie we're storing our data locally and it will stick around next time you reload.
@@ -70,3 +106,19 @@ function addNote (note) {
 
   $trackerOutput.appendChild(row)
 }
+
+function showSignedIn (username) {
+  document.querySelector('.js-username').textContent = username
+  $loggedinMessage.style.display = 'block'
+  $loginForm.style.display = 'none'
+}
+
+function hideSignedIn () {
+  $loggedinMessage.style.display = 'block'
+  $loginForm.style.display = 'none'
+}
+
+hoodie.on('account:signin', function (session) {
+  $loginForm.reset()
+  showSignedIn(session.account.username)
+})
