@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Something Tracker</title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" />
+    <link rel="stylesheet" href="assets/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Something Tracker</h1>
+      <div class="grid">
+        <div class="grid-col">
+          <form class="js-tracker-input">
+            <label class="form-label" for="amount">Amount</label>
+            <input
+              class="form-input"
+              type="number"
+              name="amount"
+              id="amount"
+              required
+              value="1"
+            >
+            <label class="form-label" for="note">Note</label>
+            <textarea
+              class="form-input"
+              name="note"
+              id="note"
+              required
+            ></textarea>
+            <button
+              class="btn pull-right full-width-small"
+              type="submit"
+            >Submit</button>
+          <form>
+        </div>
+        <div class="grid-col">
+          <h4>Tracked Items</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Amount</th>
+                <th>Note</th>
+              </tr>
+            </thead>
+            <tbody class="js-tracker-output text-center">
+              <tr class="table-placeholder">
+                <td colspan="2">
+                  Nothing tracked yet, add something!
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button
+            class="js-tracker-clear btn pull-right full-width-small hide"
+            type="button"
+          >
+            Clear tracked items
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/hoodie.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
