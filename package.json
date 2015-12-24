@@ -1,23 +1,17 @@
 {
   "name": "my-first-hoodie",
-  "description": "The default/welcome Hoodie app",
+  "description": "Default Hoodie app",
   "author": "The Hoodie Community",
   "bugs": {
     "url": "https://github.com/hoodiehq/my-first-hoodie/issues"
-  },
-  "devDependencies": {
-    "semantic-release": "^4.3.5"
   },
   "engines": {
     "node": ">=4"
   },
   "homepage": "https://github.com/hoodiehq/my-first-hoodie",
   "keywords": [
-    "frontend-only",
-    "hapi",
     "hoodie",
-    "nobackend",
-    "offline-first"
+    "app"
   ],
   "license": "Apache-2.0",
   "main": "www/index.html",
@@ -35,7 +29,9 @@
     "url": "https://github.com/hoodiehq/my-first-hoodie.git"
   },
   "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "echo 'no tests yet'"
+  },
+  "dependencies": {
+    "hoodie": "^11.0.0"
   }
 }
