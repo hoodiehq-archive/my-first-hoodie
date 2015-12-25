@@ -29,7 +29,8 @@
     "url": "https://github.com/hoodiehq/my-first-hoodie.git"
   },
   "scripts": {
-    "test": "echo 'no tests yet'"
+    "test": "echo 'no tests yet'",
+    "start": "hoodie"
   },
   "dependencies": {
     "hoodie": "^11.0.0"
