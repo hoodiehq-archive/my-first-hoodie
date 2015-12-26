@@ -34,3 +34,46 @@ npm start -- --dbUrl=http://admin:secret@localhost:5984
 ```
 
 Cross fingers ✌ And if you see bugs, try to debug and fix them :)
+
+So far, you can sign up for an account, and it will start syncing data.
+
+For quick debugging, you can run this in your web browser console
+
+```js
+// random username
+localStorage.clear()
+username = 'user' + Math.random().toString(16).substr(2)
+
+// sign up
+hoodie.account.signUp({
+  username: username,
+  password: 'secret'
+})
+.then(function () {
+  //sign in
+  return hoodie.account.signIn({
+    username: username,
+    password: 'secret'
+  })
+})
+
+// - a _users doc "org.couchdb.user:{hoodie.account.username}" was created
+// - a database "user/{hoodie.account.id}" was created
+// - all data you add gets synced now
+```
+
+## What’s next?
+
+- help us make `my-first-hoodie` a great experience! We want to keep it
+  intentionally simple, so people can play / extend it. To make it as accessible
+  (hackable) as possible, we want to keep the HTML / CSS / JS code to a minimum
+  and not use 3rd party libraries at all if possible.
+- on Hoodie itself, we prepared great starter issues: [starter issues](http://go.hood.ie/hoodie-starter-issues).
+- We have harder ones, too, if you feel adventurous :) Remote the "starter" label
+  from the filter
+- The core team (everyone welcome!) focusses on replacing the current ducktape
+  code to make this first new Hoodie app possible and to make the code as clean
+  as all the other sub modules that Hoodie uses
+- Next up we want to make CouchDB optional, to make it even simpler to get started
+  with the new Hoodie
+- Happy new Year! 🎉🐶🍾
