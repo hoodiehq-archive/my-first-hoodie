@@ -1,6 +1,7 @@
 var $loginForm = document.querySelector('#login-form')
 var $loggedinMessage = document.querySelector('#loggedin-message')
 var $registerButton = document.querySelector('#button-register')
+var $logoutButton = document.querySelector('#button-logout')
 
 var $trackerForm = document.querySelector('.js-tracker-input')
 var $trackerOutput = document.querySelector('.js-tracker-output')
@@ -12,7 +13,7 @@ $loginForm.addEventListener('submit', function (event) {
   var username = $loginForm.querySelector('[name=username]').value
   var password = $loginForm.querySelector('[name=password]').value
 
-  hoodie.account.signUp({
+  hoodie.account.signIn({
     username: username,
     password: password
   })
@@ -33,9 +34,22 @@ $registerButton.addEventListener('click', function (event) {
     password: password
   })
 
+  .then(function () {
+    return hoodie.account.signIn({
+      username: username,
+      password: password
+    })
+  })
+
   .catch(function (error) {
     alert(error)
   })
+})
+
+$logoutButton.addEventListener('click', function (event) {
+  event.preventDefault()
+
+  hoodie.account.signOut()
 })
 
 /**
@@ -118,7 +132,13 @@ function hideSignedIn () {
   $loginForm.style.display = 'none'
 }
 
-hoodie.on('account:signin', function (session) {
+hoodie.account.on('signin', function (session) {
   $loginForm.reset()
   showSignedIn(session.account.username)
 })
+hoodie.account.on('signout', hideSignedIn)
+if (hoodie.account.isSignedIn()) {
+  showSignedIn(hoodie.account.username)
+} else {
+  hideSignedIn()
+}
