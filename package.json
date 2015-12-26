@@ -33,6 +33,6 @@
     "start": "hoodie"
   },
   "dependencies": {
-    "hoodie": "^11.0.0"
+    "hoodie": "git://github.com/hoodiehq/hoodie#tent"
   }
 }
