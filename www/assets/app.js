@@ -128,13 +128,13 @@ function showSignedIn (username) {
 }
 
 function hideSignedIn () {
-  $loggedinMessage.style.display = 'block'
-  $loginForm.style.display = 'none'
+  $loggedinMessage.style.display = 'none'
+  $loginForm.style.display = 'block'
 }
 
-hoodie.account.on('signin', function (session) {
+hoodie.account.on('signin', function (account) {
   $loginForm.reset()
-  showSignedIn(session.account.username)
+  showSignedIn(account.username)
 })
 hoodie.account.on('signout', hideSignedIn)
 if (hoodie.account.isSignedIn()) {
