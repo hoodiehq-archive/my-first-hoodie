@@ -22,7 +22,46 @@ h1, h4 {
 h1 {
   border-bottom: 2px solid #222;
   text-align: left;
+  line-height: 1.5;
 }
+
+button {
+  border-radius: 5px;
+  background: #CCC;
+  border: none;
+}
+
+p button {
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 3px 5px;
+}
+
+input,
+textarea,
+table{
+  border: 1px solid #aaa;
+}
+
+textarea{
+  height: 3.25em;
+  max-width: 100%;
+}
+
+button:hover,
+button:focus,
+input[type="text"]:hover,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="number"]:hover,
+textarea:hover,
+textarea:focus{
+  border-color: transparent;
+  outline: none;
+  box-shadow: 0 0 0 3px #222;
+}
+
+
 
 /* Layout */
 
@@ -82,6 +121,13 @@ h1 {
 .table th,
 .table td {
   padding: 1rem;
+  text-align: left;
+}
+
+.table th:first-child,
+.table td:first-child {
+  padding: 1rem;
+  text-align: right;
 }
 
 .table td {
@@ -108,7 +154,7 @@ h1 {
   }
 }
 
-#login-form {
+#signin-form {
   text-align: right;
   padding-bottom: 2rem;
 }

@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Something Tracker</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" />
+    <link rel="stylesheet" href="assets/normalize.css" />
     <link rel="stylesheet" href="assets/app.css" />
   </head>
   <body>
     <div class="container">
-      <form id="login-form">
+      <form id="signin-form">
         <label for="username">Username</label>
         <input
           name="username"
@@ -28,18 +28,18 @@
         <button
           name="sign-in"
           type="submit"
-        >Login</button>
+        >Sign in</button>
         <button
           name="sign-up"
           type="submit"
-          id="button-register"
-        >Register</button>
+          id="button-signup"
+        >Sign up</button>
       </form>
-      <p id="loggedin-message" style="display: none">
-        Hello there, <span class="js-username"></span>
+      <p id="signedin-message" style="display: none">
+        Hello there, <span class="js-username"></span>!
         <button
-          id="button-logout"
-        >Logout</button>
+          id="button-signout"
+        >Sign out</button>
       </p>
       <h1>Something Tracker</h1>
       <div class="grid">
@@ -64,7 +64,7 @@
             <button
               class="btn pull-right full-width-small"
               type="submit"
-            >Submit</button>
+            >Add item</button>
           <form>
         </div>
         <div class="grid-col">
