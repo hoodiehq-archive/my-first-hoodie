@@ -2,24 +2,40 @@ sudo: false
 language: node_js
 cache:
   directories:
-  - node_modules
+    - node_modules
 notifications:
   email: false
 services:
-- couchdb
+  - couchdb
 node_js:
-- 4
-before_install:
+  - 4
+before_script:
+  - npm prune
+  # tell us what CouchDB version we have
+  - curl http://localhost:5984
+  - npm prune
+  # CouchDB on Travis has no secret?!
+  - curl http://localhost:5984/_config/couch_httpd_auth
+  - curl -X PUT -d '"78875068a1979fb910d5d8f37d316aa4"' 'http://localhost:5984/_config/couch_httpd_auth/secret'
+  # create admin account for testing (admin:secret)
+  - curl -X PUT -d '"secret"' 'http://localhost:5984/_config/admins/admin'
   # required for headless firefox / selenium test
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
-before_script:
-- npm prune
-# create admin account for testing (admin:secret)
-- curl -X PUT -d '"secret"' 'http://localhost:5984/_config/admins/admin'
-- ls node_modules/.bin/
 after_success:
-- npm run semantic-release
+  - npm run semantic-release
+# https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Node.js-v4-%28or-io.js-v3%29-compiler-requirements
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+env:
+  global:
+    - CXX=g++-4.8
+  matrix:
+    - CLIENT=selenium:firefox
 branches:
   except:
-  - /^v\d+\.\d+\.\d+$/
+    - /^v\d+\.\d+\.\d+$/
