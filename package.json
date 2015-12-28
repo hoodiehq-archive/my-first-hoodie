@@ -29,10 +29,20 @@
     "url": "https://github.com/hoodiehq/my-first-hoodie.git"
   },
   "scripts": {
-    "test": "echo 'no tests yet'",
+    "test": "frontend-test-background mocha test/*.js",
     "start": "hoodie"
   },
   "dependencies": {
     "hoodie": "git://github.com/hoodiehq/hoodie#tent"
+  },
+  "devDependencies": {
+    "@gr2m/frontend-test-setup": "^1.1.1"
+  },
+  "frontend-test-setup": {
+    "server": {
+      "cmd": "hoodie --dbUrl=http://admin:secret@localhost:5984",
+      "host": "0.0.0.0",
+      "port": 8080
+    }
   }
 }
