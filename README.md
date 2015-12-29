@@ -24,7 +24,7 @@ sign up / sign in won’t work, but the store should.
 git clone git@github.com:hoodiehq/my-first-hoodie.git
 cd my-first-hoodie
 git checkout something-tracker
-npm install
+npm install --no-optional
 ```
 
 Make sure to have a CouchDB with an admin account. Start the app with
