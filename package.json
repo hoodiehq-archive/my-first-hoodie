@@ -41,7 +41,7 @@
   },
   "frontend-test-setup": {
     "server": {
-      "cmd": "hoodie --dbUrl=http://admin:secret@localhost:5984",
+      "cmd": "hoodie --dbUrl=http://admin:secret@localhost:5984 --loglevel=silly",
       "host": "127.0.0.1",
       "port": 8080
     }
