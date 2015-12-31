@@ -27,7 +27,9 @@ git checkout something-tracker
 npm install --no-optional
 ```
 
-Make sure to have a CouchDB with an admin account. Start the app with
+Make sure to have a CouchDB with an admin account (Password: secret).
+Start the app with (replace "admin" & "secret" if you have a different
+admin username or passwords).
 
 ```
 npm start -- --dbUrl=http://admin:secret@localhost:5984
