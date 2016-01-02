@@ -70,7 +70,7 @@ describe('my demo page', function () {
         return this.execute(function storeHasNoLocalChanges() {
           return hoodie.store.hasLocalChanges() === false
         })
-      })
+      }, 10000)
 
       .executeAsync(function signOut(done) {
         return hoodie.account.signOut()
