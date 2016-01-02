@@ -35,7 +35,8 @@ env:
   global:
     - CXX=g++-4.8
   matrix:
-    - CLIENT=selenium:firefox
+    # - CLIENT=selenium:firefox
+    - CLIENT=saucelabs:chrome
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
