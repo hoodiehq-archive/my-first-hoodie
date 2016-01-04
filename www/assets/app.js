@@ -1,7 +1,7 @@
-var $signinForm = document.querySelector('#signin-form')
-var $signedinMessage = document.querySelector('#signedin-message')
-var $signupButton = document.querySelector('#button-signup')
-var $signoutButton = document.querySelector('#button-signout')
+var $signinForm = document.querySelector('.js-signin-form')
+var $signedinMessage = document.querySelector('.js-signedin-message')
+var $signupButton = document.querySelector('.js-signup-btn')
+var $signoutButton = document.querySelector('.js-signout-btn')
 
 var $trackerForm = document.querySelector('.js-tracker-input')
 var $trackerOutput = document.querySelector('.js-tracker-output')
@@ -123,13 +123,13 @@ function addNote (note) {
 
 function showSignedIn (username) {
   document.querySelector('.js-username').textContent = username
-  $signedinMessage.style.display = 'block'
-  $signinForm.style.display = 'none'
+  $signedinMessage.classList.remove('hide');
+  $signinForm.classList.add('hide');
 }
 
 function hideSignedIn () {
-  $signedinMessage.style.display = 'none'
-  $signinForm.style.display = 'block'
+  $signedinMessage.classList.add('hide');
+  $signinForm.classList.remove('hide');
 }
 
 hoodie.account.on('signin', function (account) {
