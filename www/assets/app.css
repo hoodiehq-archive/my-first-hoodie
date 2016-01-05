@@ -115,6 +115,10 @@ textarea {
   border: 1px solid #aaa;
 }
 
+.table th:first-child{
+  width: 20%;
+}
+
 .btn:focus,
 .form-input:focus {
   border-color: transparent;
