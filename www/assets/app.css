@@ -3,6 +3,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  color: #222;
 }
 
 *, *:after, *:before {
@@ -21,7 +22,12 @@ h1, h4 {
 
 h1 {
   border-bottom: 2px solid #222;
-  text-align: left;
+  line-height: 1.5;
+}
+
+textarea {
+  height: 3.25em;
+  max-width: 100%;
 }
 
 /* Layout */
@@ -44,6 +50,16 @@ h1 {
   margin-right: 1rem;
 }
 
+/* Clearfix */
+.grid > .grid-col:before,
+.grid > .grid-col:after {
+  content: " ";
+  display: table;
+}
+.grid > .grid-col:after {
+  clear: both;
+}
+
 @media (min-width: 768px) {
   .grid > .grid-col {
     float: left;
@@ -53,26 +69,90 @@ h1 {
 
 /* Components */
 
-.form-label,
-.form-input,
-.table {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
 .form-input {
   padding: 1rem;
 }
 
 .form-label {
-    display: inline-block;
-    font-weight: bold;
+  display: inline-block;
+  font-weight: bold;
 }
 
 .btn {
   display: inline-block;
   padding: 1rem;
   margin-bottom: 1rem;
+  border-radius: 5px;
+  background: #CCC;
+  border: none;
+}
+
+.btn + .btn-small {
+  margin-left: .5rem;
+}
+
+.form-label-small,
+.form-input-small,
+.btn-small {
+  font-size: .8rem;
+}
+
+.form-input-small,
+.btn-small {
+  padding: .5rem;
+}
+
+.form-label,
+.form-input,
+.textarea,
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-input,
+.table {
+  border: 1px solid #aaa;
+}
+
+.table th:first-child{
+  width: 20%;
+}
+
+.btn:focus,
+.form-input:focus {
+  border-color: transparent;
+  outline: none;
+  box-shadow: 0 0 0 2px #222;
+}
+
+/* Clearfix */
+.form:before,
+.form:after {
+  content: " ";
+  display: table;
+}
+.form:after {
+  clear: both;
+}
+
+
+@media (min-width: 768px) {
+  .form-inline .form-label,
+  .form-inline .form-input {
+    display: inline-block;
+    width: auto;
+  }
+
+  .form-inline .form-input-small {
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+  .form-inline .form-label-small {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-bottom: 0;
+  }
 }
 
 .table {
@@ -82,6 +162,13 @@ h1 {
 .table th,
 .table td {
   padding: 1rem;
+  text-align: left;
+}
+
+.table th:first-child,
+.table td:first-child {
+  padding: 1rem;
+  text-align: right;
 }
 
 .table td {
@@ -98,6 +185,10 @@ h1 {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .pull-right {
   float: right;
 }
@@ -106,9 +197,4 @@ h1 {
   .full-width-small {
     width: 100%;
   }
-}
-
-#login-form {
-  text-align: right;
-  padding-bottom: 2rem;
 }

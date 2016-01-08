@@ -4,43 +4,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Something Tracker</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css" />
+    <link rel="stylesheet" href="assets/normalize.css" />
     <link rel="stylesheet" href="assets/app.css" />
   </head>
   <body>
     <div class="container">
-      <form id="login-form">
-        <label for="username">Username</label>
+      <form class="js-signin-form form form-inline">
+        <label
+          class="form-label form-label-small"
+          for="username"
+        >Username</label>
         <input
+          class="form-input form-input-small"
           name="username"
           id="username"
           width="200"
           required
         >
-        <label for="password">Password</label>
+        <label
+          class="form-label form-label-small"
+          for="password"
+        >Password</label>
         <input
+          class="form-input form-input-small"
+          id="password"
           name="password"
           type="password"
-          id="password"
           width="200"
           required
         >
-        <button
-          name="sign-in"
-          type="submit"
-        >Login</button>
-        <button
-          name="sign-up"
-          type="submit"
-          id="button-register"
-        >Register</button>
+        <div class="text-right pull-right">
+          <button
+            class="btn btn-small"
+            name="sign-in"
+            type="submit"
+          >Sign in</button>
+          <button
+            class="js-signup-btn btn btn-small"
+            name="sign-up"
+            type="submit"
+          >Sign up</button>
+        </div>
       </form>
-      <p id="loggedin-message" style="display: none">
-        Hello there, <span class="js-username"></span>
-        <button
-          id="button-logout"
-        >Logout</button>
-      </p>
+      <div class="js-signedin-message hide text-right">
+        <p>
+          Hello there, <span class="js-username"></span>!
+          <button
+            class="js-signout-btn btn btn-small"
+          >Sign out</button>
+        </p>
+      </div>
       <h1>Something Tracker</h1>
       <div class="grid">
         <div class="grid-col">
@@ -61,10 +74,12 @@
               id="note"
               required
             ></textarea>
-            <button
-              class="btn pull-right full-width-small"
-              type="submit"
-            >Submit</button>
+            <div class="text-right">
+              <button
+                class="btn full-width-small"
+                type="submit"
+              >Add item</button>
+            </div>
           <form>
         </div>
         <div class="grid-col">

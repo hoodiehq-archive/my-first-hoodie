@@ -1,17 +1,17 @@
-var $loginForm = document.querySelector('#login-form')
-var $loggedinMessage = document.querySelector('#loggedin-message')
-var $registerButton = document.querySelector('#button-register')
-var $logoutButton = document.querySelector('#button-logout')
+var $signinForm = document.querySelector('.js-signin-form')
+var $signedinMessage = document.querySelector('.js-signedin-message')
+var $signupButton = document.querySelector('.js-signup-btn')
+var $signoutButton = document.querySelector('.js-signout-btn')
 
 var $trackerForm = document.querySelector('.js-tracker-input')
 var $trackerOutput = document.querySelector('.js-tracker-output')
 var $trackerClearButton = document.querySelector('.js-tracker-clear')
 
-$loginForm.addEventListener('submit', function (event) {
+$signinForm.addEventListener('submit', function (event) {
   event.preventDefault()
 
-  var username = $loginForm.querySelector('[name=username]').value
-  var password = $loginForm.querySelector('[name=password]').value
+  var username = $signinForm.querySelector('[name=username]').value
+  var password = $signinForm.querySelector('[name=password]').value
 
   hoodie.account.signIn({
     username: username,
@@ -23,11 +23,11 @@ $loginForm.addEventListener('submit', function (event) {
   })
 })
 
-$registerButton.addEventListener('click', function (event) {
+$signupButton.addEventListener('click', function (event) {
   event.preventDefault()
 
-  var username = $loginForm.querySelector('[name=username]').value
-  var password = $loginForm.querySelector('[name=password]').value
+  var username = $signinForm.querySelector('[name=username]').value
+  var password = $signinForm.querySelector('[name=password]').value
 
   hoodie.account.signUp({
     username: username,
@@ -46,7 +46,7 @@ $registerButton.addEventListener('click', function (event) {
   })
 })
 
-$logoutButton.addEventListener('click', function (event) {
+$signoutButton.addEventListener('click', function (event) {
   event.preventDefault()
 
   hoodie.account.signOut()
@@ -123,17 +123,17 @@ function addNote (note) {
 
 function showSignedIn (username) {
   document.querySelector('.js-username').textContent = username
-  $loggedinMessage.style.display = 'block'
-  $loginForm.style.display = 'none'
+  $signedinMessage.classList.remove('hide');
+  $signinForm.classList.add('hide');
 }
 
 function hideSignedIn () {
-  $loggedinMessage.style.display = 'none'
-  $loginForm.style.display = 'block'
+  $signedinMessage.classList.add('hide');
+  $signinForm.classList.remove('hide');
 }
 
 hoodie.account.on('signin', function (account) {
-  $loginForm.reset()
+  $signinForm.reset()
   showSignedIn(account.username)
 })
 hoodie.account.on('signout', hideSignedIn)
