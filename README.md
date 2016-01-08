@@ -27,6 +27,14 @@ git checkout something-tracker
 npm install --no-optional --production
 ```
 
+If you want to test the password reset feature:
+
+```
+cp .hoodierc-example .hoodierc
+# Edit transport config in .hoodierc, see https://www.npmjs.com/package/nodemailer
+# account.notifications.notifications is passed into nodemailer.createTransport()
+```
+
 Make sure to have a CouchDB with an admin account (Password: secret).
 Start the app with (replace "admin" & "secret" if you have a different
 admin username or passwords).

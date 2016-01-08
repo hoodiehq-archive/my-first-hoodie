@@ -1,0 +1,14 @@
+{
+  "account": {
+    "notifications": {
+      "from": "notifications@myapp.com",
+      "transport": {
+        "service": "gmail",
+        "auth": {
+          "user": "user@gmail.com",
+          "pass": "secret"
+        }
+      }
+    }
+  }
+}
