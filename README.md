@@ -24,7 +24,7 @@ sign up / sign in won’t work, but the store should.
 git clone git@github.com:hoodiehq/my-first-hoodie.git
 cd my-first-hoodie
 git checkout something-tracker
-npm install --no-optional
+npm install --no-optional --production
 ```
 
 Make sure to have a CouchDB with an admin account (Password: secret).
@@ -62,6 +62,15 @@ hoodie.account.signUp({
 // - a _users doc "org.couchdb.user:{hoodie.account.username}" was created
 // - a database "user/{hoodie.account.id}" was created
 // - all data you add gets synced now
+```
+
+## Run tests
+
+Install devDependencies by running `npm install` without `--production`
+
+```
+npm install --no-optional
+npm test
 ```
 
 ## What’s next?
