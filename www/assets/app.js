@@ -1,3 +1,4 @@
+var $passwordResetButton = document.querySelector('#reset-password')
 var $loginForm = document.querySelector('#login-form')
 var $loggedinMessage = document.querySelector('#loggedin-message')
 var $registerButton = document.querySelector('#button-register')
@@ -6,6 +7,29 @@ var $logoutButton = document.querySelector('#button-logout')
 var $trackerForm = document.querySelector('.js-tracker-input')
 var $trackerOutput = document.querySelector('.js-tracker-output')
 var $trackerClearButton = document.querySelector('.js-tracker-clear')
+
+$passwordResetButton.addEventListener('click', function (event) {
+  event.preventDefault()
+
+  var username = prompt('username', $loginForm.querySelector('[name=username]').value)
+
+  if (!username) {
+    return
+  }
+
+  hoodie.account.request({
+    type: 'passwordreset',
+    username: username
+  })
+
+  .then(function () {
+    alert('done')
+  })
+
+  .catch(function (error) {
+    alert(error)
+  })
+})
 
 $loginForm.addEventListener('submit', function (event) {
   event.preventDefault()
