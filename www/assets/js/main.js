@@ -2,6 +2,23 @@
 // initialize Hoodie
 var hoodie  = new Hoodie();
 
+// Map of input characters to escape
+var entityMap = {
+ "&": "&amp;",
+ "<": "&lt;",
+ ">": "&gt;",
+ '"': '&quot;',
+ "'": '&#39;',
+ "/": '&#x2F;'
+};
+
+// Escape HTML characters from input
+function escapeHtml(string) {
+ return String(string).replace(/[&<>"'\/]/g, function (s) {
+   return entityMap[s];
+ });
+}
+
 // Todos Collection/View
 function Todos($element) {
   var collection = [];
@@ -23,7 +40,8 @@ function Todos($element) {
   // Handle updating of an "inline edited" todo.
   $el.on('keypress', 'input[type=text]', function(event) {
     if (event.keyCode === 13) {
-      hoodie.store.update('todo', $(this).parent().data('id'), {title: event.target.value});
+      var escapedTitle = escapeHtml(event.target.value);
+      hoodie.store.update('todo', $(this).parent().data('id'), {title: escapedTitle});
     }
   });
 
@@ -88,12 +106,12 @@ hoodie.store.on('todo:remove', todos.remove);
 // clear todos when user logs out,
 hoodie.account.on('signout', todos.clear);
 
-
 // handle creating a new task
 $('#todoinput').on('keypress', function(event) {
   // ENTER & non-empty.
   if (event.keyCode === 13 && event.target.value.length) {
-    hoodie.store.add('todo', {title: event.target.value});
+    var escapedTitle = escapeHtml(event.target.value);
+    hoodie.store.add('todo', {title: escapedTitle});
     event.target.value = '';
   }
 });
